@@ -1,7 +1,9 @@
+import type { ResourceListQuery } from '@/types/knowledge-resource';
+
 const NEWS = 'news';
 const DETAIL = 'detail';
 const CONTACT = 'contact';
-const SUBMIT = 'submit';
+const KNOWLEDGE_RESOURCES = 'knowledge-resources';
 
 export const NEWS_KEYS = {
   all: [NEWS],
@@ -9,5 +11,10 @@ export const NEWS_KEYS = {
 };
 
 export const CONTACT_KEYS = {
-  submit: [CONTACT, SUBMIT] as const,
+  submit: [CONTACT] as const,
+};
+
+export const KNOWLEDGE_RESOURCE_KEYS = {
+  all: [KNOWLEDGE_RESOURCES],
+  list: (query: ResourceListQuery) => [KNOWLEDGE_RESOURCES, query] as const,
 };

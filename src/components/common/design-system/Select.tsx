@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useId, type ReactNode } from 'react';
 import Image from 'next/image';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import * as LabelPrimitive from '@radix-ui/react-label';
@@ -22,6 +22,7 @@ type SelectProps = {
   isRequired?: boolean;
   hideLabel?: boolean;
   disabled?: boolean;
+  startIcon?: ReactNode;
   className?: string;
 };
 
@@ -37,6 +38,7 @@ export function Select({
   isRequired = false,
   hideLabel = false,
   disabled = false,
+  startIcon,
   className,
 }: SelectProps) {
   const generatedId = useId();
@@ -77,7 +79,10 @@ export function Select({
             className,
           )}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
+          <span className="flex items-center gap-2">
+            {startIcon}
+            <SelectPrimitive.Value placeholder={placeholder} />
+          </span>
           <SelectPrimitive.Icon>
             <Image src="/icons/select-arrow.svg" alt="" width={11} height={6} aria-hidden="true" />
           </SelectPrimitive.Icon>

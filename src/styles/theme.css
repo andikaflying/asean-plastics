@@ -64,6 +64,7 @@
 
   /* Grey ramp — anchored at 100/200/300/500/700/900 from Figma variables */
   --color-grey-100: #f7f7f7;
+  --color-grey-150: #f1f6fa; /* Figma "Grey - blue" — Share Your Research panel */
   --color-grey-200: #ececec;
   --color-grey-300: #d2d2d2;
   --color-grey-400: #b1b1b1;
@@ -73,8 +74,20 @@
   --color-grey-800: #373737;
   --color-grey-900: #161616;
 
+  /* Green ramp — anchored at 500 (Figma "Green") — checked checkbox, active slider track */
+  --color-green-100: #d7f0e4;
+  --color-green-200: #aee1c9;
+  --color-green-300: #85d2ae;
+  --color-green-400: #4cbb8c;
+  --color-green-500: #1aa368;
+  --color-green-600: #158656;
+  --color-green-700: #106944;
+  --color-green-800: #0b4b31;
+  --color-green-900: #072e1e;
+
   /* Figma-named singletons */
   --color-cream: #fffdf7;
+  --color-cream-secondary: #faf7ee; /* Figma "Cream 2" — search/sort band */
   --color-white: #ffffff;
   --color-dark: #161616;
 

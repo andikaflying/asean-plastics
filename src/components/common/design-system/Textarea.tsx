@@ -16,7 +16,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   { label, error, isRequired = false, hideLabel = false, maxLength, className, id, value, ...rest },
   ref,
 ) {
-  const textareaId = id ?? useId();
+  const generatedId = useId();
+  const textareaId = id ?? generatedId;
   const errorId = `${textareaId}-error`;
   const counterId = `${textareaId}-counter`;
   const currentLength = value === 'string' ? value.length : 0;
