@@ -1,0 +1,96 @@
+import Image from 'next/image';
+import { Typography } from '@/components/common/design-system/Typography';
+import type { NewsBodyBlock } from '@/types/news';
+
+function ArticleBlock({ block }: { block: NewsBodyBlock }) {
+  switch (block.type) {
+    case 'lede':
+      return (
+        <Typography as="p" size="xl" weight="semibold" className="text-blue-500">
+          {block.text}
+        </Typography>
+      );
+
+    case 'heading':
+      return (
+        <Typography as="h2" size="2xl">
+          {block.text}
+        </Typography>
+      );
+
+    case 'paragraph':
+      return (
+        <Typography as="p" size="md">
+          {block.text}
+        </Typography>
+      );
+
+    case 'list':
+      return (
+        <ul className="flex flex-col gap-1">
+          {block.items.map((item) => (
+            <li key={item} className="flex items-start gap-1">
+              <Image
+                src="/icons/bullet.svg"
+                alt=""
+                width={24}
+                height={30}
+                aria-hidden="true"
+                className="mt-1 shrink-0"
+              />
+              <Typography as="span" size="md" className="flex-1">
+                {item}
+              </Typography>
+            </li>
+          ))}
+        </ul>
+      );
+
+    case 'quote':
+      return (
+        <blockquote className="flex items-stretch gap-2.5 px-0 sm:px-20">
+          <span aria-hidden="true" className="w-2 shrink-0 rounded-full bg-blue-100" />
+          <Typography as="p" size="xl" weight="semibold" className="flex-1 text-blue-500">
+            {block.text}
+          </Typography>
+        </blockquote>
+      );
+
+    case 'figure':
+      return (
+        <figure className="flex flex-col gap-2">
+          <div
+            className="relative w-full overflow-hidden rounded-xl bg-white"
+            style={{ aspectRatio: `${block.width} / ${block.height}` }}
+          >
+            <Image
+              src={block.src}
+              alt={block.alt}
+              fill
+              sizes="(min-width: 1024px) 50.4375rem, 100vw"
+              className="object-cover"
+              loading="lazy"
+            />
+          </div>
+          {block.caption && (
+            <Typography as="figcaption" size="base" color="muted">
+              {block.caption}
+            </Typography>
+          )}
+        </figure>
+      );
+
+    default:
+      return null;
+  }
+}
+
+export function NewsArticleBody({ blocks }: { blocks: NewsBodyBlock[] }) {
+  return (
+    <div className="flex flex-col gap-8">
+      {blocks.map((block, index) => (
+        <ArticleBlock key={`${index}-${block.type}`} block={block} />
+      ))}
+    </div>
+  );
+}
