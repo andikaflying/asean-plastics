@@ -1,0 +1,103 @@
+[
+  {
+    "slug": "turning-the-tide-asean-marine-plastic-response",
+    "title": "Turning the Tide: How ASEAN Is Building a Regional Response to Plastic Pollution",
+    "category": "Policy & Action",
+    "publishedAt": "2025-07-18",
+    "image": {
+      "src": "/images/news/hero-marine-debris.webp",
+      "width": 1000,
+      "height": 1334,
+      "alt": "Plastic waste and debris floating underwater"
+    },
+    "excerpt": "Delegates from all ten ASEAN member states endorsed a shared commitment to coordinated action on marine litter, marking a turning point for Southeast Asia's approach to ocean plastics.",
+    "body": [
+      {
+        "type": "lede",
+        "text": "When ASEAN leaders convened in Bangkok in 2019, marine litter was no longer a fringe concern — it had become a regional priority. Delegates from all ten member states endorsed a shared commitment to coordinated action, marking a turning point for Southeast Asia's approach to ocean plastics."
+      },
+      {
+        "type": "paragraph",
+        "text": "That commitment became the ASEAN Regional Framework on Marine Debris — a strategic blueprint designed to align national efforts under a common set of goals. While each country faces distinct challenges, the framework provides a shared language and accountability structure for collective progress."
+      },
+      {
+        "type": "heading",
+        "text": "What's Working — and What's Missing"
+      },
+      {
+        "type": "figure",
+        "src": "/images/news/coastal-cleanup.webp",
+        "width": 1200,
+        "height": 900,
+        "alt": "Volunteers in red shirts collecting plastic waste on a beach",
+        "caption": "Volunteers sort collected waste during a coastal cleanup in Sulawesi, Indonesia."
+      },
+      {
+        "type": "paragraph",
+        "text": "Across the region, several countries have made meaningful strides. Indonesia and Thailand have invested heavily in waste-collection infrastructure. The Philippines has pioneered community-led recovery programs. Vietnam is scaling up recycling capacity in its industrial zones. Yet significant gaps remain — fragmented data systems, underfunded enforcement, and limited private-sector engagement continue to slow progress."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Shifting toward a circular economy that reduces plastic production and consumption at the source;",
+          "Strengthening waste-management infrastructure to stop leakage before it reaches waterways;",
+          "Scaling public-private partnerships that bring investment and innovation to waste recovery;"
+        ]
+      },
+      {
+        "type": "quote",
+        "text": "Cross-sector collaboration — between governments, researchers, civil society, and the private sector — is essential to close the gap between policy ambition and on-the-ground results."
+      },
+      {
+        "type": "paragraph",
+        "text": "Marine plastic pollution is not just an environmental crisis. It threatens fisheries and tourism, degrades coastal ecosystems, and poses direct risks to human health through microplastic contamination. For ASEAN, a region with some of the world's most biodiverse coastlines, the stakes are uniquely high — and the window for meaningful action is narrowing."
+      }
+    ]
+  },
+  {
+    "slug": "world-bank-backs-plastic-circular-economy-fund",
+    "title": "World Bank Backs New Plastic Circular Economy Fund for Southeast Asia",
+    "category": "PARTNERSHIP",
+    "publishedAt": "2025-06-02",
+    "image": {
+      "src": "/images/news/circular-economy-fund.webp",
+      "width": 1222,
+      "height": 560,
+      "alt": "Workers sorting recyclable plastic at a materials recovery facility"
+    },
+    "excerpt": "A new blended-finance fund will support recycling infrastructure and waste-collection enterprises across the region.",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "The fund is designed to close the financing gap for small and medium recycling enterprises, which collect and process the majority of the region's post-consumer plastic waste."
+      },
+      {
+        "type": "heading",
+        "text": "Financing the informal recycling sector"
+      },
+      {
+        "type": "paragraph",
+        "text": "Grants and concessional loans will be channelled through local financial institutions, prioritising waste-collection cooperatives and women-led recycling businesses."
+      }
+    ]
+  },
+  {
+    "slug": "training-programme-equips-coastal-communities",
+    "title": "Training Programme Equips Coastal Communities to Track Local Plastic Sources",
+    "category": "CAPACITY BUILDING",
+    "publishedAt": "2025-04-21",
+    "image": {
+      "src": "/images/news/community-training.webp",
+      "width": 1222,
+      "height": 560,
+      "alt": "Community members participating in a waste-audit training session"
+    },
+    "excerpt": "Over 200 community volunteers have been trained to conduct waste audits and identify local pollution hotspots.",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "The programme pairs local volunteers with environmental scientists to conduct brand and source audits, helping municipalities target interventions where they will have the greatest impact."
+      }
+    ]
+  }
+]
