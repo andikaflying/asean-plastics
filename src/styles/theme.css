@@ -84,4 +84,6 @@
   --color-text-primary: var(--color-dark);
   --color-text-muted: var(--color-grey-700);
   --color-danger: var(--color-red-500);
+
+  --gradient-hero: linear-gradient(252.68deg, rgb(0, 96, 169) 54.844%, rgb(5, 49, 77) 97.837%);
 }
