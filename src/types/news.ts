@@ -6,7 +6,7 @@ export type NewsBodyBlock =
   | { type: 'quote'; text: string; attribution?: string }
   | { type: 'figure'; src: string; width: number; height: number; alt: string; caption?: string };
 
-export type Image = {
+export type NewsImage = {
   src: string;
   width: number;
   height: number;
@@ -18,7 +18,7 @@ export type NewsArticle = {
   title: string;
   category: string;
   publishedAt: string;
-  image: Image;
+  image: NewsImage;
   excerpt: string;
   body: NewsBodyBlock[];
 };

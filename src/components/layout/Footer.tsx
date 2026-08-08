@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from './Container';
-import { ALL_NAV } from '@/constants/navigation';
+import { ALL_NAV_ITEMS } from '@/constants/navigation';
 
 const SOCIAL_LINKS = [
   { label: 'Facebook', href: 'https://facebook.com', icon: '/icons/social-facebook.svg' },
@@ -52,7 +52,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-6 border-t border-white/20 pt-8">
           <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-6 gap-y-3">
-            {ALL_NAV.map((item) => (
+            {ALL_NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

@@ -3,15 +3,8 @@ import { Container } from '@/components/layout/Container';
 import { Typography } from '@/components/common/design-system/Typography';
 import { ShareButtons } from './ShareButtons';
 import type { NewsArticle } from '@/types/news';
-import { BackButton } from '@/components/common/BackButton';
-
-function formatDate(isoDate: string) {
-  return new Date(isoDate).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
-}
+import { BackButton } from '@/components/common/design-system/BackButton';
+import { formatDate } from '@/utils/format-date';
 
 export function NewsHero({ article }: { article: NewsArticle }) {
   return (

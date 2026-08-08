@@ -19,14 +19,14 @@ export function CircularProgress({
   className,
   label = 'Loading',
 }: CircularProgressProps) {
-  const px = SIZE_PX[size];
+  const sizeInPx = SIZE_PX[size];
 
   return (
     <svg
       role="status"
       aria-label={label}
-      width={px}
-      height={px}
+      width={sizeInPx}
+      height={sizeInPx}
       viewBox="0 0 24 24"
       fill="none"
       className={cn('animate-spin motion-reduce:animate-none', className)}

@@ -7,7 +7,12 @@ import { usePathname } from 'next/navigation';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Container } from './Container';
 import { IconButton } from '@/components/common/design-system/IconButton';
-import { ALL_NAV, LEFT_NAV, RIGHT_NAV, type NavItem } from '@/constants/navigation';
+import {
+  ALL_NAV_ITEMS,
+  PRIMARY_NAV_ITEMS,
+  SECONDARY_NAV_ITEMS,
+  type NavItem,
+} from '@/constants/navigation';
 import { cn } from '@/utils/cn';
 
 function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
@@ -28,7 +33,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
 
 export function Header() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
     <>
@@ -39,7 +44,7 @@ export function Header() {
         Skip to content
       </a>
       <header className="border-grey-200 sticky top-0 z-40 border-b bg-white">
-        <Container as="div" className="flex h-20 items-center justify-between">
+        <Container className="flex h-20 items-center justify-between">
           <Link href="/" className="shrink-0">
             <Image
               src="/icons/logo.svg"
@@ -52,19 +57,19 @@ export function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
             <div className="flex items-center gap-6">
-              {LEFT_NAV.map((item) => (
+              {PRIMARY_NAV_ITEMS.map((item) => (
                 <NavLink key={item.href} item={item} isActive={pathname.startsWith(item.href)} />
               ))}
             </div>
             <span aria-hidden="true" className="bg-grey-500/50 h-4 w-0.5 rounded-full" />
             <div className="flex items-center gap-6">
-              {RIGHT_NAV.map((item) => (
+              {SECONDARY_NAV_ITEMS.map((item) => (
                 <NavLink key={item.href} item={item} isActive={pathname.startsWith(item.href)} />
               ))}
             </div>
           </nav>
 
-          <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
+          <Dialog.Root open={isMobileNavOpen} onOpenChange={setIsMobileNavOpen}>
             <Dialog.Trigger asChild>
               <IconButton aria-label="Open menu" variant="ghost" className="lg:hidden">
                 <span className="flex flex-col gap-1.5" aria-hidden="true">
@@ -90,11 +95,11 @@ export function Header() {
                   </Dialog.Close>
                 </div>
                 <nav aria-label="Primary" className="flex flex-col gap-4">
-                  {ALL_NAV.map((item) => (
+                  {ALL_NAV_ITEMS.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => setIsMobileNavOpen(false)}
                       aria-current={pathname.startsWith(item.href) ? 'page' : undefined}
                       className={cn(
                         'text-base font-medium',

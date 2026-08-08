@@ -14,7 +14,7 @@ type ShareButtonsProps = {
 };
 
 export function ShareButtons({ title }: ShareButtonsProps) {
-  const [copied, setCopied] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export function ShareButtons({ title }: ShareButtonsProps) {
     setShareUrl(window.location.href);
   }, []);
 
-  const shareHref = (network: (typeof NETWORKS)[number]['label']) => {
+  const buildShareHref = (network: (typeof NETWORKS)[number]['label']) => {
     const encodedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(title);
 
@@ -39,8 +39,8 @@ export function ShareButtons({ title }: ShareButtonsProps) {
 
   async function handleCopyLink() {
     await navigator.clipboard.writeText(shareUrl);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   }
 
   return (
@@ -48,7 +48,7 @@ export function ShareButtons({ title }: ShareButtonsProps) {
       {NETWORKS.map((network) => (
         <a
           key={network.label}
-          href={shareHref(network.label)}
+          href={buildShareHref(network.label)}
           target="_blank"
           rel="noreferrer"
           aria-label={network.label}
@@ -60,13 +60,13 @@ export function ShareButtons({ title }: ShareButtonsProps) {
       <button
         type="button"
         onClick={handleCopyLink}
-        aria-label={copied ? 'Link copied' : 'Copy link'}
+        aria-label={isCopied ? 'Link copied' : 'Copy link'}
         className="flex size-8 items-center justify-center"
       >
         <Image src="/icons/share-copy.svg" alt="" width={32} height={32} aria-hidden="true" />
       </button>
       <span role="status" aria-live="polite" className="sr-only">
-        {copied && 'Link copied to clipboard'}
+        {isCopied && 'Link copied to clipboard'}
       </span>
     </div>
   );

@@ -1,4 +1,4 @@
-import { type ElementType, type ComponentPropsWithoutRef, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { cn } from '@/utils/cn';
 
 const SIZE_CLASSES = {
@@ -33,8 +33,8 @@ export type TypographyColor = keyof typeof COLOR_CLASSES;
 export type TypographyElement =
   'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'figcaption';
 
-type TypographyProps<TypographyElement> = {
-  as?: TypographyElement;
+type TypographyProps<TElement extends TypographyElement> = {
+  as?: TElement;
   size?: TypographySize;
   weight?: TypographyWeight;
   color?: TypographyColor;

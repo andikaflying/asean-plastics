@@ -1,10 +1,7 @@
-import { type ReactNode } from 'react';
+import { type ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/utils/cn';
 
-type ContainerProps = {
-  children?: ReactNode;
-  className?: string;
-};
+type ContainerProps = ComponentPropsWithoutRef<'div'>;
 
 export function Container({ className, children, ...rest }: ContainerProps) {
   return (
