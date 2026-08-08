@@ -1,0 +1,87 @@
+@theme {
+  /* Typography — sizes in rem so they scale with user font settings */
+  --text-5xl: 4.5rem; /* 72px */
+  --text-5xl--line-height: 5.25rem; /* 84px */
+  --text-4xl: 3.5rem; /* 56px */
+  --text-4xl--line-height: 4.125rem; /* 66px */
+  --text-3xl: 2.5rem; /* 40px */
+  --text-3xl--line-height: 3rem; /* 48px */
+  --text-2xl: 2rem; /* 32px */
+  --text-2xl--line-height: 2.5rem; /* 40px */
+  --text-xl: 1.75rem; /* 28px */
+  --text-xl--line-height: 2.375rem; /* 38px, per Figma section heading spec */
+  --text-lg: 1.5rem; /* 24px */
+  --text-lg--line-height: 2rem; /* 32px */
+  --text-md: 1.125rem; /* 18px */
+  --text-md--line-height: 1.875rem; /* 30px, per Figma text field placeholder spec */
+  --text-base: 1rem; /* 16px */
+  --text-base--line-height: 1.5rem; /* 24px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.25rem; /* 20px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-xs--line-height: 1rem; /* 16px */
+
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+
+  /* Standard Tailwind breakpoints (mobile / tablet / desktop) */
+  --breakpoint-sm: 40rem; /* 640px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+
+  /* Blue ramp — anchored at 100 (Light Blue) and 500 (Blue) from Figma variables */
+  --color-blue-100: #dbe6f9;
+  --color-blue-200: #b0c3e5;
+  --color-blue-300: #85a0d0;
+  --color-blue-400: #597dbc;
+  --color-blue-500: #2e5aa7;
+  --color-blue-600: #264a89;
+  --color-blue-700: #1d3a6b;
+  --color-blue-800: #15294d;
+  --color-blue-900: #0d192f;
+
+  /* Yellow ramp — anchored at 100 (Light Yellow) and 500 (Yellow) from Figma variables */
+  --color-yellow-100: #fff0cd;
+  --color-yellow-200: #ffe4a4;
+  --color-yellow-300: #fed77b;
+  --color-yellow-400: #fecb52;
+  --color-yellow-500: #fdbe29;
+  --color-yellow-600: #cf9c22;
+  --color-yellow-700: #a27a1a;
+  --color-yellow-800: #745713;
+  --color-yellow-900: #47350b;
+
+  /* Red ramp — anchored at 500 (error / Figma "Red") */
+  --color-red-100: #fce2e0;
+  --color-red-200: #f9b9b5;
+  --color-red-300: #f58f8a;
+  --color-red-400: #f2665e;
+  --color-red-500: #ee3d33;
+  --color-red-600: #c3322a;
+  --color-red-700: #982721;
+  --color-red-800: #6d1c17;
+  --color-red-900: #43110e;
+
+  /* Grey ramp — anchored at 100/200/300/500/700/900 from Figma variables */
+  --color-grey-100: #f7f7f7;
+  --color-grey-200: #ececec;
+  --color-grey-300: #d2d2d2;
+  --color-grey-400: #b1b1b1;
+  --color-grey-500: #999999;
+  --color-grey-600: #787878;
+  --color-grey-700: #4d4d4d;
+  --color-grey-800: #373737;
+  --color-grey-900: #161616;
+
+  /* Figma-named singletons */
+  --color-cream: #fffdf7;
+  --color-white: #ffffff;
+  --color-dark: #161616;
+
+  /* Semantic aliases */
+  --color-surface: var(--color-cream);
+  --color-border: var(--color-grey-200);
+  --color-text-primary: var(--color-dark);
+  --color-text-muted: var(--color-grey-700);
+  --color-danger: var(--color-red-500);
+}
