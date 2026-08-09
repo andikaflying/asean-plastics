@@ -15,14 +15,25 @@ import {
 } from '@/constants/navigation';
 import { cn } from '@/utils/cn';
 
-function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
+function NavLink({
+  item,
+  isActive,
+  isOnHero,
+}: {
+  item: NavItem;
+  isActive: boolean;
+  isOnHero: boolean;
+}) {
   return (
     <Link
       href={item.href}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
         'flex flex-col items-start gap-1 text-sm tracking-[0.035em] whitespace-nowrap',
-        isActive ? 'font-medium text-blue-500' : 'text-grey-500 hover:text-text-primary',
+        isActive && 'font-medium',
+        isOnHero
+          ? cn(isActive ? 'text-white' : 'text-white/80 hover:text-white')
+          : cn(isActive ? 'text-blue-500' : 'text-grey-500 hover:text-text-primary'),
       )}
     >
       {item.label}
@@ -34,6 +45,7 @@ function NavLink({ item, isActive }: { item: NavItem; isActive: boolean }) {
 export function Header() {
   const pathname = usePathname();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const isOnHero = pathname === '/';
 
   return (
     <>
@@ -43,9 +55,22 @@ export function Header() {
       >
         Skip to content
       </a>
-      <header className="border-grey-200 sticky top-0 z-40 border-b bg-white">
+      <header
+        className={cn(
+          'z-40',
+          isOnHero
+            ? 'absolute inset-x-0 top-0 bg-transparent'
+            : 'border-grey-200 sticky top-0 border-b bg-white',
+        )}
+      >
         <Container className="flex h-20 items-center justify-between">
-          <Link href="/" className="shrink-0">
+          <Link
+            href="/"
+            className={cn(
+              'inline-flex shrink-0 items-center rounded-lg',
+              isOnHero && 'bg-white px-3 py-2',
+            )}
+          >
             <Image
               src="/icons/logo.svg"
               alt="ASEAN Plastics Knowledge Platform"
@@ -58,20 +83,37 @@ export function Header() {
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
             <div className="flex items-center gap-6">
               {PRIMARY_NAV_ITEMS.map((item) => (
-                <NavLink key={item.href} item={item} isActive={pathname.startsWith(item.href)} />
+                <NavLink
+                  key={item.href}
+                  item={item}
+                  isActive={pathname.startsWith(item.href)}
+                  isOnHero={isOnHero}
+                />
               ))}
             </div>
-            <span aria-hidden="true" className="bg-grey-500/50 h-4 w-0.5 rounded-full" />
+            <span
+              aria-hidden="true"
+              className={cn('h-4 w-0.5 rounded-full', isOnHero ? 'bg-white/40' : 'bg-grey-500/50')}
+            />
             <div className="flex items-center gap-6">
               {SECONDARY_NAV_ITEMS.map((item) => (
-                <NavLink key={item.href} item={item} isActive={pathname.startsWith(item.href)} />
+                <NavLink
+                  key={item.href}
+                  item={item}
+                  isActive={pathname.startsWith(item.href)}
+                  isOnHero={isOnHero}
+                />
               ))}
             </div>
           </nav>
 
           <Dialog.Root open={isMobileNavOpen} onOpenChange={setIsMobileNavOpen}>
             <Dialog.Trigger asChild>
-              <IconButton aria-label="Open menu" variant="ghost" className="lg:hidden">
+              <IconButton
+                aria-label="Open menu"
+                variant="ghost"
+                className={cn('lg:hidden', isOnHero && 'bg-white')}
+              >
                 <span className="flex flex-col gap-1.5" aria-hidden="true">
                   <span className="bg-text-primary block h-0.5 w-5" />
                   <span className="bg-text-primary block h-0.5 w-5" />

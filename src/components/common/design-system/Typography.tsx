@@ -2,6 +2,7 @@ import { type ComponentPropsWithoutRef, type ReactNode } from 'react';
 import { cn } from '@/utils/cn';
 
 const SIZE_CLASSES = {
+  display: 'text-display font-bold',
   '5xl': 'text-5xl font-bold',
   '4xl': 'text-4xl font-bold',
   '3xl': 'text-3xl font-bold',
@@ -16,6 +17,7 @@ const SIZE_CLASSES = {
 
 const WEIGHT_CLASSES = {
   regular: 'font-normal',
+  medium: 'font-medium',
   semibold: 'font-semibold',
   bold: 'font-bold',
 } as const;
