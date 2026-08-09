@@ -19,10 +19,12 @@ function NavLink({
   item,
   isActive,
   isOnHero,
+  className,
 }: {
   item: NavItem;
   isActive: boolean;
   isOnHero: boolean;
+  className?: string;
 }) {
   return (
     <Link
@@ -34,6 +36,7 @@ function NavLink({
         isOnHero
           ? cn(isActive ? 'text-white' : 'text-white/80 hover:text-white')
           : cn(isActive ? 'text-blue-500' : 'text-grey-500 hover:text-text-primary'),
+        className,
       )}
     >
       {item.label}
@@ -60,7 +63,7 @@ export function Header() {
           'z-40',
           isOnHero
             ? 'absolute inset-x-0 top-0 bg-transparent'
-            : 'border-grey-200 sticky top-0 border-b bg-white',
+            : 'border-grey-200 border-b bg-white',
         )}
       >
         <Container className="flex h-20 items-center justify-between">
@@ -81,13 +84,14 @@ export function Header() {
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
-            <div className="flex items-center gap-6">
+            <div className="mr-1 flex items-center gap-6 uppercase">
               {PRIMARY_NAV_ITEMS.map((item) => (
                 <NavLink
                   key={item.href}
                   item={item}
                   isActive={pathname.startsWith(item.href)}
                   isOnHero={isOnHero}
+                  className="tracking-[0.0625em]"
                 />
               ))}
             </div>

@@ -11,7 +11,7 @@ export type SelectOption = {
 };
 
 type SelectProps = {
-  label: string;
+  label?: string;
   placeholder?: string;
   options: SelectOption[];
   value?: string;
@@ -20,7 +20,6 @@ type SelectProps = {
   name?: string;
   error?: string;
   isRequired?: boolean;
-  hideLabel?: boolean;
   disabled?: boolean;
   startIcon?: ReactNode;
   className?: string;
@@ -36,7 +35,6 @@ export function Select({
   name,
   error,
   isRequired = false,
-  hideLabel = false,
   disabled = false,
   startIcon,
   className,
@@ -47,18 +45,20 @@ export function Select({
 
   return (
     <div className="flex flex-col gap-2">
-      <LabelPrimitive.Root
-        htmlFor={triggerId}
-        className={cn('text-text-primary text-sm font-semibold', hideLabel && 'sr-only')}
-      >
-        {label}
-        {isRequired && (
-          <span aria-hidden="true" className="text-danger">
-            {' '}
-            *
-          </span>
-        )}
-      </LabelPrimitive.Root>
+      {label && (
+        <LabelPrimitive.Root
+          htmlFor={triggerId}
+          className={cn('text-text-primary text-sm font-semibold')}
+        >
+          {label}
+          {isRequired && (
+            <span aria-hidden="true" className="text-danger">
+              {' '}
+              *
+            </span>
+          )}
+        </LabelPrimitive.Root>
+      )}
       <SelectPrimitive.Root
         name={name}
         value={value}

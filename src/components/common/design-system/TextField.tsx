@@ -4,15 +4,14 @@ import { cn } from '@/utils/cn';
 import { Typography } from './Typography';
 
 type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
-  label: string;
+  label?: string;
   error?: string;
   isRequired?: boolean;
-  hideLabel?: boolean;
   className?: string;
 };
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextField(
-  { label, error, isRequired = false, hideLabel = false, className, id, ...rest },
+  { label, error, isRequired = false, className, id, ...rest },
   ref,
 ) {
   const generatedId = useId();
@@ -21,18 +20,20 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(function T
 
   return (
     <div className="flex flex-col gap-2">
-      <LabelPrimitive.Root
-        htmlFor={inputId}
-        className={cn('text-text-primary text-sm font-semibold', hideLabel && 'sr-only')}
-      >
-        {label}
-        {isRequired && (
-          <span aria-hidden="true" className="text-danger">
-            {' '}
-            *
-          </span>
-        )}
-      </LabelPrimitive.Root>
+      {label && (
+        <LabelPrimitive.Root
+          htmlFor={inputId}
+          className={cn('text-text-primary text-sm font-semibold')}
+        >
+          {label}
+          {isRequired && (
+            <span aria-hidden="true" className="text-danger">
+              {' '}
+              *
+            </span>
+          )}
+        </LabelPrimitive.Root>
+      )}
       <input
         ref={ref}
         id={inputId}

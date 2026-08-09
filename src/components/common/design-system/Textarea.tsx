@@ -4,16 +4,15 @@ import { cn } from '@/utils/cn';
 import { Typography } from './Typography';
 
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
-  label: string;
+  label?: string;
   error?: string;
   isRequired?: boolean;
-  hideLabel?: boolean;
   maxLength?: number;
   className?: string;
 };
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
-  { label, error, isRequired = false, hideLabel = false, maxLength, className, id, value, ...rest },
+  { label, error, isRequired = false, maxLength, className, id, value, ...rest },
   ref,
 ) {
   const generatedId = useId();
@@ -24,18 +23,20 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
 
   return (
     <div className="flex flex-col gap-2">
-      <LabelPrimitive.Root
-        htmlFor={textareaId}
-        className={cn('text-text-primary text-sm font-semibold', hideLabel && 'sr-only')}
-      >
-        {label}
-        {isRequired && (
-          <span aria-hidden="true" className="text-danger">
-            {' '}
-            *
-          </span>
-        )}
-      </LabelPrimitive.Root>
+      {label && (
+        <LabelPrimitive.Root
+          htmlFor={textareaId}
+          className={cn('text-text-primary text-sm font-semibold')}
+        >
+          {label}
+          {isRequired && (
+            <span aria-hidden="true" className="text-danger">
+              {' '}
+              *
+            </span>
+          )}
+        </LabelPrimitive.Root>
+      )}
       <div className="relative">
         <textarea
           ref={ref}
@@ -59,7 +60,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
           id={counterId}
           size="sm"
           weight="bold"
-          className="text-grey-300 pointer-events-none absolute right-[0.5625rem] bottom-2"
+          className="text-grey-300 pointer-events-none absolute right-[0.5625rem] bottom-[1rem]"
           aria-live="polite"
         >
           {currentLength}/{maxLength}

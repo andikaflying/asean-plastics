@@ -8,10 +8,16 @@ export function RecaptchaMock() {
   return (
     <div
       aria-hidden="true"
-      className="flex w-[14.875rem] items-center justify-between rounded-sm bg-[#fafafa] p-2"
+      className="mt-[-0.5rem] flex w-[14.875rem] items-center justify-between rounded-sm bg-[#fafafa] p-2"
     >
-      <div className="flex items-center gap-2">
-        <Image src="/icons/recaptcha-checkbox.svg" alt="" width={17} height={17} />
+      <div className="flex items-center gap-3">
+        <Image
+          src="/icons/recaptcha-checkbox.svg"
+          alt=""
+          width={17}
+          height={17}
+          className="ml-[0.25rem]"
+        />
         <span className="text-sm text-black">I&apos;m not a robot</span>
       </div>
       <div className="flex flex-col items-center gap-1">

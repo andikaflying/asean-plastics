@@ -71,26 +71,26 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-4">
         <TextField
-          label="Full name"
+          placeholder="Full name"
           isRequired
           error={errors.fullName?.message}
           {...register('fullName')}
         />
         <TextField
-          label="E-mail address"
+          placeholder="E-mail address"
           type="email"
           isRequired
           error={errors.email?.message}
           {...register('email')}
         />
         <TextField
-          label="Affiliation"
+          placeholder="Affiliation"
           isRequired
           error={errors.affiliation?.message}
           {...register('affiliation')}
         />
         <TextField
-          label="Country"
+          placeholder="Country"
           isRequired
           error={errors.country?.message}
           {...register('country')}
@@ -100,7 +100,7 @@ export function ContactForm() {
           name="subject"
           render={({ field }) => (
             <Select
-              label="Subject"
+              placeholder="Subject"
               isRequired
               options={SUBJECT_OPTIONS}
               value={field.value}
@@ -112,7 +112,7 @@ export function ContactForm() {
           )}
         />
         <Textarea
-          label="Message"
+          placeholder="Message"
           isRequired
           maxLength={MESSAGE_MAX_LENGTH}
           error={errors.message?.message}
@@ -123,20 +123,27 @@ export function ContactForm() {
 
       <RecaptchaMock />
 
-      <div ref={resultRef} tabIndex={-1} aria-live="polite" className="outline-none">
-        {submitContact.isSuccess && (
-          <Typography as="p" size="base" weight="semibold" className="text-blue-500">
-            Thanks — your message has been received. We&apos;ll be in touch soon.
-          </Typography>
-        )}
-        {submitContact.isError && (
-          <Typography as="p" size="base" weight="semibold" color="danger">
-            Something went wrong sending your message. Please try again.
-          </Typography>
-        )}
-      </div>
+      {(submitContact.isSuccess || submitContact.isError) && (
+        <div ref={resultRef} tabIndex={-1} aria-live="polite" className="outline-none">
+          {submitContact.isSuccess && (
+            <Typography as="p" size="base" weight="semibold" className="text-blue-500">
+              Thanks — your message has been received. We&apos;ll be in touch soon.
+            </Typography>
+          )}
+          {submitContact.isError && (
+            <Typography as="p" size="base" weight="semibold" color="danger">
+              Something went wrong sending your message. Please try again.
+            </Typography>
+          )}
+        </div>
+      )}
 
-      <Button type="submit" variant="primary" isLoading={isSubmitting} className="self-start">
+      <Button
+        type="submit"
+        variant="primary"
+        isLoading={isSubmitting}
+        className="w-[9.375rem] self-start"
+      >
         Submit
       </Button>
     </form>
