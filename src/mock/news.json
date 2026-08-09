@@ -99,5 +99,109 @@
         "text": "The programme pairs local volunteers with environmental scientists to conduct brand and source audits, helping municipalities target interventions where they will have the greatest impact."
       }
     ]
+  },
+  {
+    "slug": "asean-ministers-endorse-strengthened-targets-for-marine-debris-reduction",
+    "title": "ASEAN Ministers Endorse Strengthened Targets for Marine Debris Reduction",
+    "category": "Policy Update",
+    "publishedAt": "2025-07-28",
+    "image": {
+      "src": "/images/home/news-featured.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "Volunteers sorting collected marine debris on a beach"
+    },
+    "excerpt": "New commitments include harmonized waste data reporting and a regional fund for coastal cleanup infrastructure.",
+    "source": { "label": "ASEAN Secretariat", "url": "https://asean.org" },
+    "body": [
+      {
+        "type": "lede",
+        "text": "New commitments include harmonized waste data reporting and a regional fund for coastal cleanup infrastructure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Environment ministers from all ten ASEAN member states endorsed strengthened regional targets for marine debris reduction, agreeing to harmonize waste data reporting standards and establish a shared fund for coastal cleanup infrastructure."
+      }
+    ]
+  },
+  {
+    "slug": "world-bank-and-asean-launch-marine-plastics-innovation-fund",
+    "title": "World Bank and ASEAN Launch USD 20M Marine Plastics Innovation Fund",
+    "category": "Partnership",
+    "publishedAt": "2025-07-10",
+    "image": {
+      "src": "/images/home/news-partnership.webp",
+      "width": 600,
+      "height": 400,
+      "alt": "Coastal community waste collection site"
+    },
+    "excerpt": "The new fund will finance innovation grants for plastic waste reduction across coastal communities in the region.",
+    "source": { "label": "World Bank", "url": "https://worldbank.org" },
+    "body": [
+      {
+        "type": "lede",
+        "text": "The new fund will finance innovation grants for plastic waste reduction across coastal communities in the region."
+      }
+    ]
+  },
+  {
+    "slug": "philippines-coastal-towns-report-drop-in-beach-waste",
+    "title": "Philippines Coastal Towns Report 40% Drop in Beach Waste",
+    "category": "Community",
+    "publishedAt": "2025-07-05",
+    "image": {
+      "src": "/images/home/news-community.webp",
+      "width": 600,
+      "height": 800,
+      "alt": "Volunteers cleaning a beach in the Philippines"
+    },
+    "excerpt": "Community-led monitoring programmes across coastal towns report a significant decline in beach waste this year.",
+    "source": { "label": "WWF", "url": "https://wwf.org" },
+    "body": [
+      {
+        "type": "lede",
+        "text": "Community-led monitoring programmes across coastal towns report a significant decline in beach waste this year."
+      }
+    ]
+  },
+  {
+    "slug": "thai-packaging-consortium",
+    "title": "Thai Packaging Consortium Commits to Recyclable-Only Packaging by 2027",
+    "category": "Industry",
+    "publishedAt": "2025-07-01",
+    "image": {
+      "src": "/images/home/news-industry.webp",
+      "width": 600,
+      "height": 801,
+      "alt": "Plastic packaging materials at a recycling facility"
+    },
+    "excerpt": "A coalition of Thai manufacturers has pledged to transition to fully recyclable packaging within two years.",
+    "source": { "label": "Reuters", "url": "https://reuters.com" },
+    "body": [
+      {
+        "type": "lede",
+        "text": "A coalition of Thai manufacturers has pledged to transition to fully recyclable packaging within two years."
+      }
+    ]
+  },
+  {
+    "slug": "highlights-2025-asean-ocean-plastics-symposium-bali",
+    "title": "Highlights from the 2025 ASEAN Ocean Plastics Symposium in Bali",
+    "category": "Event Recap",
+    "publishedAt": "2025-06-25",
+    "image": {
+      "src": "/images/home/news-event-recap.webp",
+      "width": 600,
+      "height": 900,
+      "alt": "Delegates at the ASEAN Ocean Plastics Symposium in Bali"
+    },
+    "excerpt": "Regional experts gathered in Bali to share progress on marine plastics research and cross-border collaboration.",
+    "source": { "label": "SEA-MaP", "url": "https://sea-map.org" },
+    "body": [
+      {
+        "type": "lede",
+        "text": "Regional experts gathered in Bali to share progress on marine plastics research and cross-border collaboration."
+      }
+    ]
   }
 ]
