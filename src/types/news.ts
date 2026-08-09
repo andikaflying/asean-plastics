@@ -13,6 +13,11 @@ export type NewsImage = {
   alt: string;
 };
 
+export type NewsSource = {
+  label: string;
+  url: string;
+};
+
 export type NewsArticle = {
   slug: string;
   title: string;
@@ -21,4 +26,5 @@ export type NewsArticle = {
   image: NewsImage;
   excerpt: string;
   body: NewsBodyBlock[];
+  source?: NewsSource;
 };
