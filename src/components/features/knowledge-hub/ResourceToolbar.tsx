@@ -60,16 +60,14 @@ export function ResourceToolbar() {
           placeholder="Search by keyword..."
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
-          className="md:max-w-xl md:flex-1"
+          className="bg-transparent md:max-w-xl md:flex-1"
         />
         <Select
-          label="Sort by"
-          hideLabel
           startIcon={<SortIcon />}
           options={[...SORT_OPTIONS]}
           value={query.sort}
           onValueChange={handleSortChange}
-          className="md:w-[9.375rem]"
+          className="bg-transparent md:w-[9.375rem]"
         />
       </Container>
     </div>

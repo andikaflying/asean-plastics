@@ -18,11 +18,6 @@ function FilterIcon() {
   );
 }
 
-/**
- * The Figma comp is desktop-only (1366px) — below `lg` the sidebar collapses
- * into a "Filters" trigger opening a drawer, mirroring the mobile nav
- * pattern already used by `Header`.
- */
 export function KnowledgeHubFilters() {
   const [isOpen, setIsOpen] = useState(false);
 

@@ -31,13 +31,13 @@ export function ResourceGrid() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
-        <Typography as="p" size="base" color="muted" aria-live="polite">
-          {isFetching
-            ? 'Updating results…'
-            : `${data.total} result${data.total === 1 ? '' : 's'} found`}
-        </Typography>
-      </div>
+      {isFetching && (
+        <div className="flex items-center justify-between">
+          <Typography as="p" size="base" color="muted" aria-live="polite">
+            Updating results…
+          </Typography>
+        </div>
+      )}
 
       {data.data.length === 0 ? (
         <EmptyState
@@ -62,7 +62,13 @@ export function ResourceGrid() {
       ) : (
         <div className="grid gap-6 md:grid-cols-2" aria-busy={isFetching}>
           {data.data.map((resource) => (
-            <ResourceCard key={resource.id} resource={resource} />
+            <ResourceCard
+              key={resource.id}
+              resource={resource}
+              cardClassName="bg-cream md:py-8"
+              labelClassName="text-primary"
+              titleClassName="text-primary"
+            />
           ))}
         </div>
       )}
@@ -71,7 +77,7 @@ export function ResourceGrid() {
         page={data.page}
         totalPages={data.totalPages}
         getHref={(page) => buildHref({ page })}
-        className="pt-4"
+        className="pt-8"
       />
     </div>
   );

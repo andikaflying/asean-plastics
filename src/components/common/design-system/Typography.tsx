@@ -3,12 +3,13 @@ import { cn } from '@/utils/cn';
 
 const SIZE_CLASSES = {
   display: 'text-display font-bold',
-  '6xl': 'text-6xl font-bold',
+  '6xl': 'text-6xl font-bold tracking-[-0.1875rem]',
   '5xl': 'text-5xl font-bold',
-  '4xl': 'text-4xl font-bold',
-  '3xl': 'text-3xl font-bold',
+  '4xl': 'text-4xl font-bold tracking-[-0.125rem]',
+  '3xl': 'text-3xl font-bold tracking-[-0.125rem]',
   '2xl': 'text-2xl font-semibold',
-  xl: 'text-xl font-semibold',
+  xl: 'text-xl font-semibold tracking-[-0.4px]',
+  'small-heading': 'text-small-heading font-semibold',
   lg: 'text-lg font-semibold',
   md: 'text-md font-normal',
   base: 'text-base font-normal',

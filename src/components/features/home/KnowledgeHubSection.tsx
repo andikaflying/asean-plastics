@@ -1,9 +1,9 @@
 import { Section } from '@/components/layout/Section';
 import { SectionHeading } from '@/components/layout/SectionHeading';
 import { Carousel } from '@/components/common/design-system/Carousel';
-import { ResourceCard } from '@/components/features/knowledge-hub/ResourceCard';
 import knowledgeResources from '@/mock/knowledge-resources.json';
 import type { KnowledgeResource } from '@/types/knowledge-resource';
+import { ResourceCard } from './ResourceCard';
 
 const FEATURED_RESOURCE_COUNT = 6;
 

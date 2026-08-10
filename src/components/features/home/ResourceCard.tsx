@@ -107,15 +107,9 @@ export function ResourceCard({
             </Link>
           </Typography>
 
-          <div className="flex flex-wrap items-center gap-1">
+          <div className="flex flex-wrap items-center gap-2">
             {visibleKeywords.map((keyword) => (
-              <Tag
-                key={keyword}
-                className={cn(
-                  'text-base',
-                  isFeatured ? '' : 'max-w-[10ch] overflow-hidden text-ellipsis whitespace-nowrap',
-                )}
-              >
+              <Tag key={keyword} className={isFeatured ? 'text-base' : ''}>
                 {keyword}
               </Tag>
             ))}

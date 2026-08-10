@@ -9,11 +9,21 @@ type PaginationProps = {
 };
 
 function getPageItems(page: number, totalPages: number): (number | 'ellipsis')[] {
-  const keep = new Set<number>([1, totalPages, page - 1, page, page + 1]);
+  const keep = new Set<number>([
+    1,
+    totalPages,
+    page - 1,
+    page,
+    page + 1,
+    page - 2,
+    page + 2,
+    page - 3,
+    page + 3,
+  ]);
   const pages = [...keep]
     .filter((candidate) => candidate >= 1 && candidate <= totalPages)
     .sort((a, b) => a - b);
-
+  console.log('Pages : ', pages, '.Keep : ', keep);
   const items: (number | 'ellipsis')[] = [];
   let previous = 0;
   for (const current of pages) {
@@ -94,8 +104,8 @@ export function Pagination({ page, totalPages, getHref, className }: PaginationP
             className={cn(
               'flex size-12 items-center justify-center rounded-lg border text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
               item === page
-                ? 'border-blue-500 font-semibold text-blue-500'
-                : 'text-text-primary hover:border-grey-300 border-transparent',
+                ? 'border-blue-500 bg-blue-500 font-semibold text-white'
+                : 'text-text-primary hover:border-grey-600 border-gray-300',
             )}
           >
             {item}

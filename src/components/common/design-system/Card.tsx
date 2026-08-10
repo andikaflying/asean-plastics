@@ -7,7 +7,7 @@ export function Card({ className, children, ...rest }: CardProps) {
   return (
     <div
       className={cn(
-        'border-grey-200 flex flex-col gap-6 rounded-xl border bg-white px-6 py-8',
+        'border-grey-300 flex flex-col gap-6 rounded-xl border bg-white px-6 py-8',
         className,
       )}
       {...rest}

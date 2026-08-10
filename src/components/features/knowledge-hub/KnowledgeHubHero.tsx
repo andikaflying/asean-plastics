@@ -4,13 +4,13 @@ import { Typography } from '@/components/common/design-system/Typography';
 
 export function KnowledgeHubHero() {
   return (
-    <div className="bg-dark relative isolate overflow-hidden">
+    <div className="bg-dark relative isolate -z-10 h-[688px] overflow-hidden">
       <Image
         src="/images/knowledge-hub-hero.webp"
         alt=""
         fill
         priority
-        sizes="100vw"
+        style={{ top: '-2.625rem' }}
         className="object-cover opacity-70"
       />
       <Image
@@ -34,11 +34,17 @@ export function KnowledgeHubHero() {
           as="h1"
           weight="bold"
           color="inherit"
-          className="text-3xl text-white uppercase sm:text-4xl lg:text-6xl"
+          size="6xl"
+          className="text-3xl tracking-[-0.1875rem] text-white uppercase sm:text-4xl lg:text-6xl"
         >
           Knowledge Hub
         </Typography>
-        <Typography as="p" size="md" color="inherit" className="max-w-xl text-white/90">
+        <Typography
+          as="p"
+          size="small-heading"
+          color="inherit"
+          className="text-small-heading max-w-[830px] text-white/90"
+        >
           Discover research, policy tools, and practical guides tackling plastic pollution across
           Southeast Asia.
         </Typography>

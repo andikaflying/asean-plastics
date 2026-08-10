@@ -72,7 +72,7 @@ export function Select({
           aria-describedby={error ? errorId : undefined}
           aria-required={isRequired}
           className={cn(
-            'bg-grey-100 text-text-primary data-[placeholder]:text-md data-[placeholder]:text-grey-500 flex h-12 w-full items-center justify-between rounded-lg py-2 pr-2 pl-4 text-base',
+            'bg-grey-100 text-text-primary data-[placeholder]:text-md data-[placeholder]:text-grey-500 flex h-12 w-full items-center justify-between rounded-lg py-2 pr-2 pl-2 text-base',
             'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
             'disabled:cursor-not-allowed disabled:opacity-50',
             error && 'outline-danger outline outline-1',

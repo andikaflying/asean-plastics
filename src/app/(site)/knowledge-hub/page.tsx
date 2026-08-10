@@ -38,10 +38,15 @@ export default async function KnowledgeHubPage({ searchParams }: KnowledgeHubPag
   return (
     <>
       <KnowledgeHubHero />
-      {showFeatured && <FeaturedResources resources={data.featured} className="-mt-24 lg:-mt-32" />}
+      {showFeatured && (
+        <FeaturedResources
+          resources={data.featured}
+          className="-mt-[14rem] pb-4 lg:-mt-[20.5rem]"
+        />
+      )}
       <ResourceToolbar />
       <Container className="py-8 lg:py-12">
-        <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[18rem_1fr] lg:items-start lg:gap-x-16">
+        <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[18rem_1fr] lg:items-start lg:gap-x-32">
           <KnowledgeHubFilters />
           <ResourceGrid />
         </div>

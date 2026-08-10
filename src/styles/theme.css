@@ -15,6 +15,7 @@
   --text-xl--line-height: 2.375rem; /* 38px, per Figma section heading spec */
   --text-lg: 1.5rem; /* 24px */
   --text-lg--line-height: 2rem; /* 32px */
+  --text-small-heading: 1.25rem; /* 20px */
   --text-md: 1.125rem; /* 18px */
   --text-md--line-height: 1.875rem; /* 30px, per Figma text field placeholder spec */
   --text-base: 1rem; /* 16px */

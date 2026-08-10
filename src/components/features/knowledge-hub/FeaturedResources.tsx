@@ -32,7 +32,7 @@ export function FeaturedResources({ resources, className }: FeaturedResourcesPro
         <PinIcon />
         <Typography
           as="h2"
-          size="lg"
+          size="small-heading"
           weight="semibold"
           color="inherit"
           className="tracking-wide uppercase"
@@ -42,7 +42,14 @@ export function FeaturedResources({ resources, className }: FeaturedResourcesPro
       </div>
       <div className="grid gap-6 md:grid-cols-2">
         {resources.map((resource) => (
-          <ResourceCard key={resource.id} resource={resource} isFeatured />
+          <ResourceCard
+            key={resource.id}
+            resource={resource}
+            isFeatured
+            cardClassName="bg-cream md:py-8 "
+            labelClassName="text-primary"
+            titleClassName="text-primary"
+          />
         ))}
       </div>
     </Container>

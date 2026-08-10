@@ -164,7 +164,7 @@ export function ResourceFilterPanel() {
   return (
     <aside aria-label="Filters" className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <Typography as="h2" size="lg" weight="semibold">
+        <Typography as="h2" size="md" weight="semibold">
           Filter
         </Typography>
         {hasAnythingToClear && (
@@ -228,7 +228,7 @@ export function ResourceFilterPanel() {
             <div className="flex items-center gap-3">
               <TextField
                 label="From year"
-                hideLabel
+
                 type="number"
                 min={PUBLICATION_YEAR_MIN}
                 max={draft.yearTo}
@@ -240,7 +240,6 @@ export function ResourceFilterPanel() {
               <span aria-hidden="true" className="bg-grey-300 h-px w-2" />
               <TextField
                 label="To year"
-                hideLabel
                 type="number"
                 min={draft.yearFrom}
                 max={PUBLICATION_YEAR_MAX}
