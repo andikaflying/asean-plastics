@@ -26,7 +26,7 @@ export function NewsArticleView({ slug }: { slug: string }) {
   return (
     <article>
       <NewsHero article={article} />
-      <Container className="py-8 lg:py-12">
+      <Container className="py-8 lg:py-14">
         <Breadcrumbs
           className="sr-only"
           items={[

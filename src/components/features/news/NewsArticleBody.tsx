@@ -29,14 +29,14 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
       return (
         <ul className="flex flex-col gap-1">
           {block.items.map((item) => (
-            <li key={item} className="flex items-start gap-1">
+            <li key={item} className="flex items-start gap-2">
               <Image
                 src="/icons/bullet.svg"
                 alt=""
-                width={24}
-                height={30}
+                width={12}
+                height={15}
                 aria-hidden="true"
-                className="mt-1 shrink-0"
+                className="mt-2 shrink-0"
               />
               <Typography as="span" size="md" className="flex-1">
                 {item}
@@ -48,7 +48,7 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
 
     case 'quote':
       return (
-        <blockquote className="flex items-stretch gap-2.5 px-0 sm:px-20">
+        <blockquote className="flex items-stretch gap-2.5 px-0 sm:px-18">
           <span aria-hidden="true" className="w-2 shrink-0 rounded-full bg-blue-100" />
           <Typography as="p" size="xl" weight="semibold" className="flex-1 text-blue-500">
             {block.text}
@@ -60,14 +60,14 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
       return (
         <figure className="flex flex-col gap-2">
           <div
-            className="relative w-full overflow-hidden rounded-xl bg-white"
-            style={{ aspectRatio: `${block.width} / ${block.height}` }}
+            className="relative mx-auto max-h-[28.375rem] w-full overflow-hidden rounded-xl bg-white"
+            style={{ aspectRatio: block.width / block.height }}
           >
             <Image
               src={block.src}
               alt={block.alt}
               fill
-              sizes="(min-width: 1024px) 50.4375rem, 100vw"
+              sizes="(min-width: 1024px) 53.875rem, 100vw"
               className="object-cover"
               loading="lazy"
             />
@@ -87,7 +87,7 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
 
 export function NewsArticleBody({ blocks }: { blocks: NewsBodyBlock[] }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-6">
       {blocks.map((block, index) => (
         <ArticleBlock key={`${index}-${block.type}`} block={block} />
       ))}

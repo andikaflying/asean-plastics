@@ -31,8 +31,8 @@ function NavLink({
       href={item.href}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
-        'flex flex-col items-start gap-1 text-sm tracking-[0.035em] whitespace-nowrap',
-        isActive && 'font-medium',
+        'flex flex-col items-start text-sm tracking-[0.035em] whitespace-nowrap',
+        isActive && 'mt-1 font-medium',
         isOnHero
           ? cn(isActive ? 'text-white' : 'text-white/80 hover:text-white')
           : cn(isActive ? 'text-blue-500' : 'text-grey-500 hover:text-text-primary'),

@@ -12,7 +12,7 @@ export function BackButton({ href, ariaLabel = '' }: BackButtonProps) {
       aria-label={ariaLabel}
       className="flex size-10 items-center justify-center rounded-full text-blue-500 hover:bg-blue-100"
     >
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="36" height="36" fill="none" aria-hidden="true">
         <path
           d="M19 12H5M5 12l7-7M5 12l7 7"
           stroke="currentColor"
