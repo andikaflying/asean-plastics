@@ -22,9 +22,15 @@ export const HERO_SLIDES: HeroSlide[] = [
     subtitle:
       'Hands-on training programmes equipping practitioners to run waste audits and design circular solutions',
   },
+  {
+    id: 'cross-border-worker',
+    image: { src: '/images/home/hero-banner.webp', width: 1400, height: 934 },
+    title: 'Skills Built for Worker',
+    subtitle: 'Hands-on training programmes equipping practitioners in 6 months',
+  },
 ];
 
-export const OFFER_PILLARS: OfferPillar[] = [
+export const OFFER_PILLARS = [
   {
     id: 'knowledge-hub',
     title: 'Knowledge Hub',
@@ -50,4 +56,8 @@ export const OFFER_PILLARS: OfferPillar[] = [
     icon: { src: '/icons/offer-training.svg', width: 48, height: 48 },
     href: '/training',
   },
-];
+] as const satisfies readonly OfferPillar[];
+
+/** Union of valid pillar ids, derived from `OFFER_PILLARS` so per-pillar style maps
+ *  (e.g. `OFFERCARD_CONTAINER_CLASSNAME` in `OfferCard.tsx`) can't drift out of sync. */
+export type OfferPillarId = (typeof OFFER_PILLARS)[number]['id'];

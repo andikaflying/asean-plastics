@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
-      <Container className="py-8 lg:py-14">
+      <Container className="py-8 lg:py-[3.375rem]">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[495fr_598fr] lg:gap-[8.0625rem]">
           <ContactIntro />
           <ContactForm />

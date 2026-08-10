@@ -30,7 +30,7 @@ export function HomeHero() {
 
   return (
     <div
-      className="relative isolate mx-4 overflow-hidden rounded-3xl sm:mx-6 lg:mx-[4.5rem]"
+      className="mx-4rounded-3xl relative isolate sm:mx-6 lg:mx-[4.5rem]"
       role="region"
       aria-roledescription="carousel"
       aria-label="Homepage highlights"
@@ -40,7 +40,7 @@ export function HomeHero() {
           {HERO_SLIDES.map((slide, index) => (
             <div
               key={slide.id}
-              className="relative min-h-[24rem] w-full shrink-0 grow-0 basis-full sm:min-h-[32rem]"
+              className="relative h-[39.875rem] min-h-[24rem] w-full shrink-0 grow-0 basis-full sm:min-h-[32rem]"
               role="group"
               aria-roledescription="slide"
               style={{ maskImage: 'url(/icons/hero-mask.svg)', maskSize: '100% 100%' }}
@@ -54,12 +54,12 @@ export function HomeHero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
-              <div className="relative flex h-full min-h-[24rem] flex-col items-center justify-center gap-6 px-6 py-16 text-center sm:min-h-[32rem]">
+              <div className="relative flex h-full min-h-[24rem] flex-col items-center justify-center gap-6 px-10 py-17 text-center sm:min-h-[32rem]">
                 <Typography
                   as={index === 0 ? 'h1' : 'p'}
-                  size="4xl"
+                  size="5xl"
                   color="inherit"
-                  className="max-w-3xl text-white uppercase drop-shadow-[0_0_5px_rgba(0,0,0,0.65)]"
+                  className="leading-[5.375rem] text-white uppercase drop-shadow-[0_0_5px_rgba(0,0,0,0.65)]"
                 >
                   {slide.title}
                 </Typography>
@@ -78,8 +78,8 @@ export function HomeHero() {
         </div>
       </div>
 
-      <div className="absolute right-8 bottom-8 flex items-center gap-4">
-        <div className="flex items-center gap-1" aria-hidden="true">
+      <div className="absolute right-[-0.125rem] bottom-[-3.125rem] flex items-center">
+        <div className="mr-6 flex items-center gap-1" aria-hidden="true">
           {HERO_SLIDES.map((slide, index) => (
             <span
               key={slide.id}
@@ -90,7 +90,7 @@ export function HomeHero() {
             />
           ))}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <IconButton
             aria-label="Previous slide"
             variant="ghost"

@@ -1,22 +1,38 @@
 import { Typography } from '@/components/common/design-system/Typography';
-import { OfferCard } from './OfferCard';
+import {
+  OfferCard,
+  OFFERCARD_CONTAINER_CLASSNAME,
+  OFFERCARD_DESCRIPTION_CLASSNAME,
+  OFFERCARD_HEADER_CLASSNAME,
+  OFFERCARD_TEXT_CONTAINER_CLASSNAME,
+} from './OfferCard';
 import { OFFER_PILLARS } from '@/constants/homepage';
 
 export function WhatWeOffer() {
   return (
-    <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
-      <div className="flex flex-col gap-4 lg:w-72 lg:shrink-0">
-        <Typography as="h2" size="display">
+    <div className="flex flex-col gap-[4.5rem] lg:flex-row lg:items-start">
+      <div className="mt-2 flex flex-col gap-4 lg:w-[15.25rem] lg:shrink-0">
+        <Typography as="h2" size="display" className="tracking-[-0.0375rem]">
           What We Offer
         </Typography>
         <Typography as="p" size="md" weight="medium" color="muted">
           Discover what the platform offers
         </Typography>
       </div>
-      <div className="grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {OFFER_PILLARS.map((pillar) => (
-          <OfferCard key={pillar.id} pillar={pillar} isHighlighted={pillar.id === 'partnerships'} />
-        ))}
+      <div className="mt-[0.375rem] grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {OFFER_PILLARS.map((pillar) => {
+          return (
+            <OfferCard
+              key={pillar.id}
+              pillar={pillar}
+              isHighlighted={pillar.id === 'partnerships'}
+              className={OFFERCARD_CONTAINER_CLASSNAME[pillar.id]}
+              textContainerClassName={OFFERCARD_TEXT_CONTAINER_CLASSNAME[pillar.id]}
+              headerClassName={OFFERCARD_HEADER_CLASSNAME[pillar.id]}
+              descriptionClassName={OFFERCARD_DESCRIPTION_CLASSNAME[pillar.id]}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { cn } from '@/utils/cn';
 
 const SIZE_CLASSES = {
   display: 'text-display font-bold',
+  '6xl': 'text-6xl font-bold',
   '5xl': 'text-5xl font-bold',
   '4xl': 'text-4xl font-bold',
   '3xl': 'text-3xl font-bold',

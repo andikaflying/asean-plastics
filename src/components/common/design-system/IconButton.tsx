@@ -23,7 +23,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
       ref={ref}
       type="button"
       className={cn(
-        'inline-flex size-10 items-center justify-center rounded-full transition-colors',
+        'inline-flex size-8 items-center justify-center rounded-full transition-colors',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
         'disabled:cursor-not-allowed disabled:opacity-50',
         VARIANT_CLASSES[variant],

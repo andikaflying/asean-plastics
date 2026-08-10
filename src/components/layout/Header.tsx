@@ -71,7 +71,7 @@ export function Header() {
             href="/"
             className={cn(
               'inline-flex shrink-0 items-center rounded-lg',
-              isOnHero && 'bg-white px-3 py-2',
+              isOnHero && 'bg-transparent pt-[0.5rem] pl-0',
             )}
           >
             <Image
@@ -91,7 +91,7 @@ export function Header() {
                   item={item}
                   isActive={pathname.startsWith(item.href)}
                   isOnHero={isOnHero}
-                  className="tracking-[0.0625em]"
+                  className="font-bold tracking-[0.039em]"
                 />
               ))}
             </div>

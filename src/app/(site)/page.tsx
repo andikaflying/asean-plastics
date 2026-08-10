@@ -22,9 +22,9 @@ export default function HomePage() {
       <div className="to-surface relative isolate overflow-hidden bg-gradient-to-b from-blue-100 via-blue-100/30">
         <div
           aria-hidden="true"
-          className="absolute top-0 right-0 -z-10 h-[28rem] w-[65%] rounded-bl-[6rem] bg-blue-500 sm:h-[36rem]"
+          className="absolute top-0 right-0 -z-10 h-[51rem] w-[64%] rounded-bl-[1rem] bg-blue-500"
         />
-        <div className="pt-24 pb-8 lg:pt-28 lg:pb-12">
+        <div className="pt-24 pb-8 lg:pt-26 lg:pb-12">
           <HomeHero />
           <HomeIntro />
         </div>
