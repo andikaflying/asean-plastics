@@ -24,7 +24,7 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
       </div>
       <div
         className={cn(
-          'flex min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 pt-4',
+          'flex h-full min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 py-4',
           isHighlighted ? 'border-blue-500' : 'border-grey-200',
         )}
       >
@@ -34,7 +34,7 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
             size="sm"
             weight="bold"
             className={cn(
-              'tracking-[0.05em] uppercase',
+              'tracking-[0.2em] uppercase',
               isHighlighted ? 'text-blue-500' : 'text-grey-500',
             )}
           >
@@ -42,9 +42,9 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
           </Typography>
           <Typography
             as="h3"
-            size="2xl"
+            size="xl"
             weight="semibold"
-            className={cn(isHighlighted && 'text-blue-500')}
+            className={cn('tracking-[0px]', isHighlighted && 'text-blue-500')}
           >
             {opportunity.title}
           </Typography>

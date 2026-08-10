@@ -18,13 +18,13 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
         isHighlighted ? 'border-blue-500' : 'border-grey-300',
       )}
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex h-[224px] flex-col gap-2">
         <Typography
           as="span"
           size="sm"
           weight="bold"
           className={cn(
-            'tracking-[0.05em] uppercase',
+            'tracking-[0.125em] uppercase',
             isHighlighted ? 'text-blue-500' : 'text-grey-500',
           )}
         >
@@ -32,7 +32,7 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
         </Typography>
         <Typography
           as="h3"
-          size="2xl"
+          size="xl"
           weight="semibold"
           className={cn(isHighlighted && 'text-blue-500')}
         >
@@ -40,7 +40,46 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
             {article.title}
           </Link>
         </Typography>
+        <div className="mt-auto flex items-center justify-between">
+          <Typography
+            as="span"
+            size="base"
+            weight="medium"
+            className={cn(isHighlighted ? 'text-blue-500' : 'text-grey-500')}
+          >
+            {formatDate(article.publishedAt)}
+          </Typography>
+          {article.source && (
+            <a
+              href={article.source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'flex items-center gap-2',
+                isHighlighted ? 'text-blue-500' : 'text-grey-500',
+              )}
+            >
+              <Typography
+                as="span"
+                size="base"
+                weight="medium"
+                className={cn(isHighlighted && 'text-blue-500')}
+              >
+                {article.source.label}
+              </Typography>
+              <Image
+                src="/icons/external-link.svg"
+                alt=""
+                width={20}
+                height={20}
+                aria-hidden="true"
+              />
+              <span className="sr-only"> (opens in new tab)</span>
+            </a>
+          )}
+        </div>
       </div>
+
       <div className="relative aspect-[282/188] w-full overflow-hidden rounded-lg">
         <Image
           src={article.image.src}
@@ -50,44 +89,6 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
           loading="lazy"
           className="object-cover"
         />
-      </div>
-      <div className="flex items-center justify-between">
-        <Typography
-          as="span"
-          size="base"
-          weight="medium"
-          className={cn(isHighlighted ? 'text-blue-500' : 'text-grey-500')}
-        >
-          {formatDate(article.publishedAt)}
-        </Typography>
-        {article.source && (
-          <a
-            href={article.source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              'flex items-center gap-2',
-              isHighlighted ? 'text-blue-500' : 'text-grey-500',
-            )}
-          >
-            <Typography
-              as="span"
-              size="base"
-              weight="medium"
-              className={cn(isHighlighted && 'text-blue-500')}
-            >
-              {article.source.label}
-            </Typography>
-            <Image
-              src="/icons/external-link.svg"
-              alt=""
-              width={20}
-              height={20}
-              aria-hidden="true"
-            />
-            <span className="sr-only"> (opens in new tab)</span>
-          </a>
-        )}
       </div>
     </div>
   );

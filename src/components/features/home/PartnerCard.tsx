@@ -14,28 +14,28 @@ export function PartnerCard({ partner }: PartnerCardProps) {
   const overflowCount = partner.themes.length - visibleThemes.length;
 
   return (
-    <div className="border-grey-300 flex h-full flex-col overflow-hidden rounded-xl border bg-white">
-      <div className="bg-grey-100 flex h-[11.75rem] items-center justify-center">
+    <div className="border-grey-300 flex h-[432px] max-h-[432px] flex-col overflow-hidden rounded-xl border bg-white">
+      <div className="flex h-[11.75rem] items-center justify-center bg-white">
         <Image
           src={partner.logo.src}
           alt={partner.name}
           width={partner.logo.width}
           height={partner.logo.height}
-          className="max-h-24 w-auto max-w-[9rem] object-contain"
+          className="h-[11.75rem] w-auto max-w-[9rem] object-contain"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-4 px-4 py-4">
+      <div className="flex flex-1 flex-col px-4 py-4">
         <div className="flex flex-col gap-2">
           <Typography
             as="span"
-            size="xs"
+            size="base"
             weight="bold"
             color="muted"
             className="tracking-[0.05em] uppercase"
           >
             {partner.sector}
           </Typography>
-          <Typography as="h3" size="2xl" weight="semibold">
+          <Typography as="h3" size="xl" weight="semibold">
             {partner.name}
           </Typography>
         </div>

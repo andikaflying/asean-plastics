@@ -50,9 +50,14 @@ export function ResourceCard({ resource, isFeatured = false }: ResourceCardProps
   const isExternal = resource.access.kind === 'external';
 
   return (
-    <Card className={cn('h-full justify-between', isFeatured && 'md:px-8 md:py-10')}>
+    <Card
+      className={cn(
+        'h-[25.625rem] max-h-[25.625rem] justify-between bg-transparent',
+        isFeatured && 'md:px-8 md:py-10',
+      )}
+    >
       <div className="flex flex-col gap-4">
-        <div className="text-grey-500 flex flex-wrap items-center gap-2 text-xs">
+        <div className="flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase">
           <span>{typeLabel}</span>
           <span aria-hidden="true" className="bg-grey-300 h-3.5 w-px" />
           <span>{resource.format}</span>
@@ -64,7 +69,7 @@ export function ResourceCard({ resource, isFeatured = false }: ResourceCardProps
           as="h3"
           size={isFeatured ? '2xl' : 'lg'}
           weight="semibold"
-          className="line-clamp-3"
+          className="line-clamp-3 text-white"
         >
           <Link
             href={resource.access.url}
@@ -86,7 +91,7 @@ export function ResourceCard({ resource, isFeatured = false }: ResourceCardProps
       </div>
 
       <div className="flex items-center justify-between pt-6">
-        <Typography as="span" size="base" color="muted">
+        <Typography as="span" size="base" color="inherit">
           {resource.source}
         </Typography>
         <a
@@ -95,7 +100,7 @@ export function ResourceCard({ resource, isFeatured = false }: ResourceCardProps
           rel={isExternal ? 'noopener noreferrer' : undefined}
           aria-hidden="true"
           tabIndex={-1}
-          className="inline-flex items-center gap-1 text-blue-500"
+          className="inline-flex items-center gap-1 text-white"
         >
           {!isExternal && (
             <Typography as="span" size="base" weight="semibold" color="inherit">

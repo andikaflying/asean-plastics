@@ -29,13 +29,13 @@ export default function HomePage() {
           <HomeIntro />
         </div>
       </div>
-      <Section tone="cream">
+      <Section tone="cream" className="lg:pb-10">
         <WhatWeOffer />
       </Section>
       <KnowledgeHubSection />
       <PartnershipsSection />
       <TrainingSection />
-      <Section tone="cream">
+      <Section tone="cream" className="py-24">
         <OpportunitiesSection />
       </Section>
       <Container className="py-16 lg:py-24">

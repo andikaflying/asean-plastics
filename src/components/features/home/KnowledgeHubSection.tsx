@@ -12,14 +12,21 @@ export function KnowledgeHubSection() {
 
   return (
     <Section tone="blue" isBleed>
-      <div className="mx-auto flex w-full max-w-[76.375rem] flex-col gap-12 px-4 sm:px-6 lg:px-[4.5rem]">
+      <div className="mx-auto flex w-full max-w-[76.375rem] flex-col gap-12">
         <SectionHeading
           title="Knowledge Hub"
           tone="light"
           description="Explore the newest reports, policy toolkits, case studies, and data sets — each vetted and organized to help you advance plastics circularity across ASEAN."
           cta={{ label: 'Explore all resources', href: '/knowledge-hub' }}
+          className="relative lg:flex-col"
+          titleClassName="ml-0 max-w-[18.125rem]"
         />
-        <Carousel ariaLabel="Featured knowledge resources" tone="light">
+        <Carousel
+          ariaLabel="Featured knowledge resources"
+          tone="light"
+          className="mt-2"
+          viewportClassName="mt-9"
+        >
           {resources.map((resource) => (
             <div key={resource.id} className="w-[19.5rem] sm:w-[24.5rem]">
               <ResourceCard resource={resource} />

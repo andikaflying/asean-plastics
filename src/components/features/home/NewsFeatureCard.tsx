@@ -10,7 +10,7 @@ type NewsFeatureCardProps = {
 
 export function NewsFeatureCard({ article }: NewsFeatureCardProps) {
   return (
-    <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+    <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-stretch">
       <div className="relative aspect-[600/397] w-full shrink-0 overflow-hidden rounded-lg lg:w-[37.5rem]">
         <Image
           src={article.image.src}
@@ -21,19 +21,19 @@ export function NewsFeatureCard({ article }: NewsFeatureCardProps) {
           className="object-cover"
         />
       </div>
-      <div className="border-grey-300 flex min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 pt-4">
+      <div className="border-grey-300 flex min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 py-4">
         <div className="flex flex-col gap-4">
           <Typography
             as="span"
             size="sm"
             weight="bold"
             color="muted"
-            className="tracking-[0.05em] uppercase"
+            className="tracking-[0.125em] uppercase"
           >
             {article.category}
           </Typography>
           <div className="flex flex-col gap-2">
-            <Typography as="h3" size="3xl" weight="bold">
+            <Typography as="h3" size="3xl" weight="bold" className="tracking-[-2px]">
               <Link href={`/news/${article.slug}`} className="hover:text-blue-500">
                 {article.title}
               </Link>

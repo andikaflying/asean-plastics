@@ -6,9 +6,9 @@ import { OPPORTUNITIES } from '@/constants/opportunities';
 
 export function OpportunitiesSection() {
   return (
-    <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
+    <div className="mt-2 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
       <div className="flex flex-col gap-4 lg:w-96 lg:shrink-0">
-        <Typography as="h2" size="display">
+        <Typography as="h2" size="display" className="tracking-[-0.125rem]">
           Opportunities
         </Typography>
         <Typography as="p" size="md" weight="medium">

@@ -11,7 +11,7 @@ export function Tag({ className, children, onRemove, removeLabel, ...rest }: Tag
   return (
     <span
       className={cn(
-        'text-text-primary inline-flex h-6 items-center gap-1 rounded-full bg-yellow-100 px-2 text-xs',
+        'text-text-primary border-radius-sm inline-flex h-6 items-center gap-1 bg-yellow-100 px-2 text-xs',
         className,
       )}
       {...rest}

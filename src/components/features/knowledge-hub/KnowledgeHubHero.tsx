@@ -34,7 +34,7 @@ export function KnowledgeHubHero() {
           as="h1"
           weight="bold"
           color="inherit"
-          className="text-3xl text-white uppercase sm:text-4xl lg:text-5xl"
+          className="text-3xl text-white uppercase sm:text-4xl lg:text-6xl"
         >
           Knowledge Hub
         </Typography>

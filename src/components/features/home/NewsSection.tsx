@@ -24,7 +24,7 @@ export function NewsSection() {
   if (!featuredArticle) return null;
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col">
       <div className="flex items-center justify-between">
         <Typography as="h2" size="display">
           News
@@ -34,7 +34,7 @@ export function NewsSection() {
         </Link>
       </div>
       <NewsFeatureCard article={featuredArticle} />
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {gridArticles.map((article, index) => (
           <NewsCard key={article.slug} article={article} isHighlighted={index === 0} />
         ))}

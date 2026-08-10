@@ -53,7 +53,7 @@ Must refer to `.claude/rules/naming-standard.md`
 
 ```css
 @theme {
-  --text-5xl: 4.5rem; /* 72px */
+  --text-6xl: 4.5rem; /* 72px */
   --text-lg: 1.5rem; /* 24px */
   --text-4xl: 3.5rem; /* 56px */
   --text-md: 1.125rem; /* 18px */

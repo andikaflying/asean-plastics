@@ -16,13 +16,20 @@ type SectionHeadingProps = {
   tone?: 'light' | 'dark';
   cta?: SectionHeadingCta;
   className?: string;
+  titleClassName?: string;
+  textContainerClassName?: string;
+  descriptionClassName?: string;
+  ctaClassName?: string;
 };
 
 function AccentMark({ tone }: { tone: 'light' | 'dark' }) {
   return (
     <span
       aria-hidden="true"
-      className={cn('relative inline-block h-7 w-6 shrink-0', tone === 'light' ? '-ml-6' : '-ml-6')}
+      className={cn(
+        'absolute top-[0px] left-[0.75rem] -z-10 inline-block h-7 w-6 shrink-0',
+        tone === 'light' ? '-ml-6' : '-ml-6',
+      )}
     >
       <Image
         src="/icons/accent-square-1.svg"
@@ -36,7 +43,7 @@ function AccentMark({ tone }: { tone: 'light' | 'dark' }) {
         alt=""
         width={15}
         height={14}
-        className="absolute top-0 left-[39%]"
+        className="absolute top-0 left-[81%]"
       />
     </span>
   );
@@ -48,6 +55,10 @@ export function SectionHeading({
   tone = 'dark',
   cta,
   className,
+  titleClassName,
+  textContainerClassName,
+  descriptionClassName,
+  ctaClassName,
 }: SectionHeadingProps) {
   const isLight = tone === 'light';
   const ctaVariant: ButtonVariant = 'primary';
@@ -55,18 +66,24 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between',
+        'relative flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between',
         className,
       )}
     >
-      <div className="flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-start lg:gap-8">
+      <div
+        className={cn(
+          'ml-[4.5rem] flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-start lg:gap-8',
+          textContainerClassName,
+        )}
+      >
         <Typography
           as="h2"
           size="display"
           color="inherit"
           className={cn(
-            'ml-6 shrink-0 whitespace-nowrap',
+            'tracking[-0.125rem] relative shrink-0',
             isLight ? 'text-white' : 'text-text-primary',
+            titleClassName,
           )}
         >
           <AccentMark tone={tone} />
@@ -78,7 +95,11 @@ export function SectionHeading({
             size="md"
             weight="medium"
             color="inherit"
-            className={cn('max-w-xl pt-4', isLight ? 'text-white' : 'text-text-primary')}
+            className={cn(
+              'max-w-xl pt-4',
+              isLight ? 'text-white' : 'text-text-primary',
+              descriptionClassName,
+            )}
           >
             {description}
           </Typography>
@@ -87,9 +108,13 @@ export function SectionHeading({
       {cta && (
         <Link
           href={cta.href}
-          className={getButtonClassNames(
-            ctaVariant,
-            isLight ? 'border-white text-white hover:bg-white/10' : undefined,
+          className={cn(
+            getButtonClassNames(
+              ctaVariant,
+              isLight ? 'border-white text-white hover:bg-white/10' : undefined,
+            ),
+            'absolute right-0 bottom-[-6.25rem]',
+            ctaClassName,
           )}
         >
           {cta.label}

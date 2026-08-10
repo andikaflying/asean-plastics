@@ -10,7 +10,10 @@ type CourseCardProps = {
 
 export function CourseCard({ course }: CourseCardProps) {
   return (
-    <Link href={course.href} className="flex flex-col gap-4 border-t border-white/50 pt-4">
+    <Link
+      href={course.href}
+      className="flex h-[440px] flex-col gap-4 border-t border-white/50 pt-4"
+    >
       <Typography
         as="span"
         size="sm"
@@ -30,10 +33,10 @@ export function CourseCard({ course }: CourseCardProps) {
           className="object-cover"
         />
       </div>
-      <Typography as="h3" size="2xl" weight="semibold" color="inherit" className="text-white">
+      <Typography as="h3" size="xl" weight="semibold" color="inherit" className="mt-3 text-white">
         {course.title}
       </Typography>
-      <div className="flex items-center gap-1 text-white/70">
+      <div className="mt-auto mb-2 flex items-center gap-1 text-white/70">
         <Image src="/icons/hourglass.svg" alt="" width={16} height={16} aria-hidden="true" />
         <Typography as="span" size="base" weight="medium" color="inherit">
           {formatDuration(course.durationMinutes)}

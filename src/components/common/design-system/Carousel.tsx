@@ -19,6 +19,7 @@ type CarouselProps = {
   className?: string;
   viewportClassName?: string;
   slideClassName?: string;
+  directionClassName?: string;
   children: ReactNode[];
 };
 
@@ -28,6 +29,7 @@ export function Carousel({
   className,
   viewportClassName,
   slideClassName,
+  directionClassName,
   children,
 }: CarouselProps) {
   const prefersReducedMotion =
@@ -67,7 +69,7 @@ export function Carousel({
 
   return (
     <div className={cn('flex flex-col gap-6', className)} role="region" aria-label={ariaLabel}>
-      <div className="flex items-center gap-3">
+      <div className={cn('flex items-center gap-3', directionClassName)}>
         <IconButton
           aria-label="Previous"
           variant={arrowVariant}
