@@ -122,9 +122,15 @@ export function Header() {
                 )}
               >
                 <span className="flex flex-col gap-1.5" aria-hidden="true">
-                  <span className="bg-text-primary block h-0.5 w-5" />
-                  <span className="bg-text-primary block h-0.5 w-5" />
-                  <span className="bg-text-primary block h-0.5 w-5" />
+                  <span
+                    className={cn('block h-0.5 w-5', isOnHero ? 'bg-white' : 'bg-text-primary')}
+                  />
+                  <span
+                    className={cn('block h-0.5 w-5', isOnHero ? 'bg-white' : 'bg-text-primary')}
+                  />
+                  <span
+                    className={cn('block h-0.5 w-5', isOnHero ? 'bg-white' : 'bg-text-primary')}
+                  />
                 </span>
               </IconButton>
             </Dialog.Trigger>

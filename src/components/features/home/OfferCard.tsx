@@ -24,7 +24,7 @@ export const OFFERCARD_HEADER_CLASSNAME: Record<OfferPillarId, string> = {
 };
 
 export const OFFERCARD_DESCRIPTION_CLASSNAME: Record<OfferPillarId, string> = {
-  'knowledge-hub': 'w-[13.75rem]',
+  'knowledge-hub': 'lg:w-[13.75rem] w-full',
   partnerships: '',
   training: '',
 };
