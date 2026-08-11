@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <div className="to-surface relative isolate overflow-hidden bg-[image:url('/images/home/headline-bg.png'),linear-gradient(var(--tw-gradient-stops))] [--tw-gradient-position:to_bottom_in_oklab] from-blue-100 via-blue-100/30 bg-top bg-no-repeat">
+      <div className="to-surface relative isolate overflow-hidden bg-[linear-gradient(var(--tw-gradient-stops))] [--tw-gradient-position:to_bottom_in_oklab] from-blue-100 via-blue-100/30 bg-top bg-no-repeat">
         <div
           aria-hidden="true"
           className="absolute top-0 right-0 -z-10 h-[26rem] w-[64%] rounded-bl-[1rem] bg-blue-500 sm:h-[32rem] lg:h-[51rem]"
