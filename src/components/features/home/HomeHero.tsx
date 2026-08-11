@@ -96,7 +96,7 @@ export function HomeHero() {
                       as={index === 0 ? 'h1' : 'p'}
                       size="5xl"
                       color="inherit"
-                      className="text-3xl text-white uppercase drop-shadow-[0_1px_3px_rgba(13,25,47,0.55)] lg:text-5xl lg:leading-[5.375rem]"
+                      className="text-2xl text-white uppercase drop-shadow-[0_1px_3px_rgba(13,25,47,0.55)] lg:text-5xl lg:leading-[5.375rem]"
                     >
                       {slide.title}
                     </Typography>

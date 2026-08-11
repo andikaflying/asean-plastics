@@ -117,7 +117,7 @@ export function ResourceCard({
                 key={keyword}
                 className={cn(
                   'text-base group-hover:text-blue-500',
-                  isFeatured ? '' : 'max-w-[10ch] overflow-hidden text-ellipsis whitespace-nowrap',
+                  isFeatured ? '' : 'overflow-hidden text-ellipsis whitespace-nowrap',
                 )}
               >
                 {keyword}
