@@ -61,14 +61,14 @@ export function ResourceCard({
   return (
     <Card
       className={cn(
-        'h-[25.625rem] max-h-[25.625rem] justify-between gap-8 bg-transparent',
+        "group h-[25.625rem] max-h-[25.625rem] justify-between gap-8 bg-transparent hover:bg-white hover:bg-[image:url('/images/box-blocks.png')] hover:bg-bottom hover:bg-no-repeat",
         cardClassName,
       )}
     >
       <div className={cn('flex flex-col gap-4 gap-[3.25rem]', containerClassName)}>
         <div
           className={cn(
-            'flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase',
+            'flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase group-hover:text-blue-500',
             labelClassName,
           )}
         >
@@ -83,7 +83,7 @@ export function ResourceCard({
             as="h3"
             size="xl"
             weight="semibold"
-            className={cn('line-clamp-3 text-white', titleClassName)}
+            className={cn('line-clamp-3 text-white group-hover:text-blue-500', titleClassName)}
           >
             <Link
               href={resource.access.url}
@@ -106,7 +106,7 @@ export function ResourceCard({
       </div>
 
       <div className="flex items-center justify-between">
-        <Typography as="span" size="base" color="inherit">
+        <Typography as="span" size="base" color="inherit" className="group-hover:text-blue-500">
           {resource.source}
         </Typography>
         <a
@@ -115,7 +115,7 @@ export function ResourceCard({
           rel={isExternal ? 'noopener noreferrer' : undefined}
           aria-hidden="true"
           tabIndex={-1}
-          className="inline-flex items-center gap-1 text-white"
+          className="inline-flex items-center gap-1 text-white group-hover:text-blue-500"
         >
           {!isExternal && (
             <Typography as="span" size="base" weight="semibold" color="inherit">

@@ -19,7 +19,7 @@ function AccentMark() {
   return (
     <span
       aria-hidden="true"
-      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 inline-block h-7 w-6 shrink-0"
+      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 hidden h-7 w-6 shrink-0 md:block"
     >
       <Image
         src="/icons/accent-square-1.svg"
@@ -65,8 +65,8 @@ export function NewsSection() {
       </div>
       <NewsFeatureCard article={featuredArticle} />
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:mt-16 lg:grid-cols-4">
-        {gridArticles.map((article, index) => (
-          <NewsCard key={article.slug} article={article} isHighlighted={index === 0} />
+        {gridArticles.map((article) => (
+          <NewsCard key={article.slug} article={article} />
         ))}
       </div>
     </div>

@@ -3,40 +3,28 @@ import Link from 'next/link';
 import { Typography } from '@/components/common/design-system/Typography';
 import { formatDate } from '@/utils/format-date';
 import type { NewsArticle } from '@/types/news';
-import { cn } from '@/utils/cn';
 
 type NewsCardProps = {
   article: NewsArticle;
-  isHighlighted?: boolean;
 };
 
-export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
+export function NewsCard({ article }: NewsCardProps) {
   return (
-    <div
-      className={cn(
-        'flex h-full flex-col justify-between gap-6 border-t-2 pt-4',
-        isHighlighted ? 'border-blue-500' : 'border-grey-300',
-      )}
-    >
+    <div className="group border-grey-300 flex h-full flex-col justify-between gap-6 border-t-2 pt-4 hover:border-blue-500 hover:bg-white hover:bg-[image:url('/images/box-blocks.png')] hover:bg-bottom hover:bg-no-repeat">
       <div className="flex h-[224px] flex-col gap-2">
         <Typography
           as="span"
           size="sm"
           weight="bold"
-          className={cn(
-            'tracking-[0.125em] uppercase',
-            isHighlighted ? 'text-blue-500' : 'text-grey-500',
-          )}
+          className="text-grey-500 tracking-[0.125em] uppercase group-hover:text-blue-500"
         >
           {article.category}
         </Typography>
-        <Typography
-          as="h3"
-          size="xl"
-          weight="semibold"
-          className={cn(isHighlighted && 'text-blue-500')}
-        >
-          <Link href={`/news/${article.slug}`} className="hover:underline">
+        <Typography as="h3" size="xl" weight="semibold" className="group-hover:text-blue-500">
+          <Link
+            href={`/news/turning-the-tide-asean-marine-plastic-response`}
+            className="hover:underline"
+          >
             {article.title}
           </Link>
         </Typography>
@@ -45,7 +33,7 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
             as="span"
             size="base"
             weight="medium"
-            className={cn(isHighlighted ? 'text-blue-500' : 'text-grey-500')}
+            className="text-grey-500 group-hover:text-blue-500"
           >
             {formatDate(article.publishedAt)}
           </Typography>
@@ -54,16 +42,13 @@ export function NewsCard({ article, isHighlighted = false }: NewsCardProps) {
               href={article.source.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                'flex items-center gap-2',
-                isHighlighted ? 'text-blue-500' : 'text-grey-500',
-              )}
+              className="text-grey-500 flex items-center gap-2 group-hover:text-blue-500"
             >
               <Typography
                 as="span"
                 size="base"
                 weight="medium"
-                className={cn(isHighlighted && 'text-blue-500')}
+                className="group-hover:text-blue-500"
               >
                 {article.source.label}
               </Typography>

@@ -14,7 +14,7 @@ export function PartnerCard({ partner }: PartnerCardProps) {
   const overflowCount = partner.themes.length - visibleThemes.length;
 
   return (
-    <div className="border-grey-300 flex h-[432px] max-h-[432px] flex-col overflow-hidden rounded-xl border bg-white">
+    <div className="border-grey-300 flex h-[432px] max-h-[432px] flex-col overflow-hidden rounded-xl border bg-white hover:bg-white hover:bg-[image:url('/images/box-blocks.png')] hover:bg-bottom hover:bg-no-repeat">
       <div className="flex h-[11.75rem] items-center justify-center bg-white">
         <Image
           src={partner.logo.src}

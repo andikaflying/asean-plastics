@@ -27,7 +27,7 @@ function AccentMark({ tone }: { tone: 'light' | 'dark' }) {
     <span
       aria-hidden="true"
       className={cn(
-        'absolute top-[0px] left-[-0.5rem] -z-10 inline-block h-7 w-6 shrink-0',
+        'absolute top-[0px] left-[-0.5rem] -z-10 hidden h-7 w-6 shrink-0 md:block',
         tone === 'light' ? '-ml-6' : '-ml-6',
       )}
     >

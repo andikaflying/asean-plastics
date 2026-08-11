@@ -63,7 +63,7 @@ export function ResourceCard({
   return (
     <Card
       className={cn(
-        'justify-between bg-transparent',
+        "group justify-between bg-transparent hover:bg-white hover:bg-[image:url('/images/box-blocks.png')] hover:bg-bottom hover:bg-no-repeat",
         isFeatured
           ? 'min-h-[20rem] md:h-[25.625rem] md:max-h-[25.625rem] md:px-8 md:py-10'
           : 'min-h-[18rem] gap-6 md:h-[23.125rem] md:max-h-[23.125rem] md:gap-8',
@@ -79,7 +79,7 @@ export function ResourceCard({
       >
         <div
           className={cn(
-            'flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase',
+            'flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase group-hover:text-blue-500',
             labelClassName,
           )}
         >
@@ -95,7 +95,7 @@ export function ResourceCard({
             size={isFeatured ? '3xl' : 'xl'}
             weight="semibold"
             className={cn(
-              'line-clamp-3 text-white',
+              'line-clamp-3 text-white group-hover:text-blue-500',
               isFeatured ? 'text-xl md:text-3xl' : 'text-lg md:text-xl',
               titleClassName,
             )}
@@ -116,7 +116,7 @@ export function ResourceCard({
               <Tag
                 key={keyword}
                 className={cn(
-                  'text-base',
+                  'text-base group-hover:text-blue-500',
                   isFeatured ? '' : 'max-w-[10ch] overflow-hidden text-ellipsis whitespace-nowrap',
                 )}
               >
@@ -129,7 +129,7 @@ export function ResourceCard({
       </div>
 
       <div className="flex items-center justify-between">
-        <Typography as="span" size="base" color="inherit">
+        <Typography as="span" size="base" color="inherit" className="group-hover:text-blue-500">
           {resource.source}
         </Typography>
         <a
@@ -138,7 +138,7 @@ export function ResourceCard({
           rel={isExternal ? 'noopener noreferrer' : undefined}
           aria-hidden="true"
           tabIndex={-1}
-          className="inline-flex items-center gap-1 text-white"
+          className="inline-flex items-center gap-1 text-white group-hover:text-blue-500"
         >
           {!isExternal && (
             <Typography as="span" size="base" weight="semibold" color="inherit">

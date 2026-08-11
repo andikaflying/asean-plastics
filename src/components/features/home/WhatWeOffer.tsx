@@ -13,7 +13,7 @@ function AccentMark() {
   return (
     <span
       aria-hidden="true"
-      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 inline-block h-7 w-6 shrink-0"
+      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 hidden h-7 w-6 shrink-0 md:block"
     >
       <Image
         src="/icons/accent-square-1.svg"
@@ -61,7 +61,6 @@ export function WhatWeOffer() {
             <OfferCard
               key={pillar.id}
               pillar={pillar}
-              isHighlighted={pillar.id === 'partnerships'}
               className={OFFERCARD_CONTAINER_CLASSNAME[pillar.id]}
               textContainerClassName={OFFERCARD_TEXT_CONTAINER_CLASSNAME[pillar.id]}
               headerClassName={OFFERCARD_HEADER_CLASSNAME[pillar.id]}

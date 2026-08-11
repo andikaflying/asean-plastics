@@ -9,7 +9,7 @@ function AccentMark() {
   return (
     <span
       aria-hidden="true"
-      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 inline-block h-7 w-6 shrink-0"
+      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 hidden h-7 w-6 shrink-0 md:block"
     >
       <Image
         src="/icons/accent-square-1.svg"
@@ -50,12 +50,8 @@ export function OpportunitiesSection() {
         </Link>
       </div>
       <div className="flex flex-1 flex-col gap-8 lg:gap-14">
-        {OPPORTUNITIES.map((opportunity, index) => (
-          <OpportunityCard
-            key={opportunity.id}
-            opportunity={opportunity}
-            isHighlighted={index === 1}
-          />
+        {OPPORTUNITIES.map((opportunity) => (
+          <OpportunityCard key={opportunity.id} opportunity={opportunity} />
         ))}
       </div>
     </div>

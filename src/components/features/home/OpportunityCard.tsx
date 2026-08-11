@@ -2,16 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Typography } from '@/components/common/design-system/Typography';
 import type { Opportunity } from '@/types/opportunity';
-import { cn } from '@/utils/cn';
 
 type OpportunityCardProps = {
   opportunity: Opportunity;
-  isHighlighted?: boolean;
 };
 
-export function OpportunityCard({ opportunity, isHighlighted = false }: OpportunityCardProps) {
+export function OpportunityCard({ opportunity }: OpportunityCardProps) {
   return (
-    <Link href={opportunity.href} className="flex flex-col gap-8 lg:flex-row lg:items-start">
+    <Link href={opportunity.href} className="group flex flex-col gap-8 lg:flex-row lg:items-start">
       <div className="relative aspect-[387/258] w-full shrink-0 overflow-hidden rounded-lg lg:w-[24.1875rem]">
         <Image
           src={opportunity.image.src}
@@ -22,21 +20,13 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
           className="object-cover"
         />
       </div>
-      <div
-        className={cn(
-          'flex h-full min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 py-4',
-          isHighlighted ? 'border-blue-500' : 'border-grey-200',
-        )}
-      >
+      <div className="border-grey-200 flex h-full min-w-0 flex-1 flex-col justify-between gap-6 border-t-2 py-4 group-hover:border-blue-500 group-hover:bg-white group-hover:bg-[image:url('/images/box-blocks.png')] group-hover:bg-bottom group-hover:bg-no-repeat">
         <div className="flex flex-col gap-2">
           <Typography
             as="span"
             size="sm"
             weight="bold"
-            className={cn(
-              'tracking-[0.2em] uppercase',
-              isHighlighted ? 'text-blue-500' : 'text-grey-500',
-            )}
+            className="text-grey-500 tracking-[0.2em] uppercase group-hover:text-blue-500"
           >
             {opportunity.kind}
           </Typography>
@@ -44,7 +34,7 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
             as="h3"
             size="xl"
             weight="semibold"
-            className={cn('tracking-[0px]', isHighlighted && 'text-blue-500')}
+            className="tracking-[0px] group-hover:text-blue-500"
           >
             {opportunity.title}
           </Typography>
@@ -52,23 +42,13 @@ export function OpportunityCard({ opportunity, isHighlighted = false }: Opportun
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-1">
             <Image src="/icons/calendar.svg" alt="" width={16} height={16} aria-hidden="true" />
-            <Typography
-              as="span"
-              size="base"
-              weight="medium"
-              className={cn(isHighlighted && 'text-blue-500')}
-            >
+            <Typography as="span" size="base" weight="medium" className="group-hover:text-blue-500">
               {opportunity.date}
             </Typography>
           </div>
           <div className="flex items-center gap-1">
             <Image src="/icons/pin.svg" alt="" width={16} height={16} aria-hidden="true" />
-            <Typography
-              as="span"
-              size="base"
-              weight="medium"
-              className={cn(isHighlighted && 'text-blue-500')}
-            >
+            <Typography as="span" size="base" weight="medium" className="group-hover:text-blue-500">
               {opportunity.location}
             </Typography>
           </div>

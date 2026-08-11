@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 
 export const OFFERCARD_CONTAINER_CLASSNAME: Record<OfferPillarId, string> = {
   'knowledge-hub': 'px-[1.625rem]',
-  partnerships: "bg-[image:url('/images/box-blocks.png')] bg-bottom bg-no-repeat",
+  partnerships: '',
   training: '',
 };
 
@@ -31,7 +31,6 @@ export const OFFERCARD_DESCRIPTION_CLASSNAME: Record<OfferPillarId, string> = {
 
 type OfferCardProps = {
   pillar: OfferPillar;
-  isHighlighted?: boolean;
   className?: string;
   textContainerClassName?: string;
   headerClassName?: string;
@@ -40,7 +39,6 @@ type OfferCardProps = {
 
 export function OfferCard({
   pillar,
-  isHighlighted = false,
   className,
   textContainerClassName,
   headerClassName,
@@ -49,8 +47,8 @@ export function OfferCard({
   return (
     <div
       className={cn(
-        'border-grey-300 flex h-full flex-col gap-4 rounded-lg border px-5 py-6 sm:gap-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10',
-        isHighlighted && 'bg-white',
+        'border-grey-300 group flex h-full flex-col gap-4 rounded-lg border px-5 py-6 sm:gap-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10',
+        "hover:bg-white hover:bg-[image:url('/images/box-blocks.png')] hover:bg-bottom hover:bg-no-repeat", //hover bg condition
         className,
       )}
     >
@@ -60,7 +58,7 @@ export function OfferCard({
           as="h3"
           size="2xl"
           weight="bold"
-          className={cn(isHighlighted ? 'text-blue-500' : 'text-text-primary', headerClassName)}
+          className={cn('text-text-primary group-hover:text-blue-500', headerClassName)}
         >
           {pillar.title}
         </Typography>
@@ -68,10 +66,7 @@ export function OfferCard({
           as="p"
           size="md"
           weight="medium"
-          className={cn(
-            isHighlighted ? 'text-blue-500' : 'text-text-primary',
-            descriptionClassName,
-          )}
+          className={cn('text-text-primary group-hover:text-blue-500', descriptionClassName)}
         >
           {pillar.description}
         </Typography>

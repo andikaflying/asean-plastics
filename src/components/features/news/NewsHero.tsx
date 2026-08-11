@@ -8,7 +8,7 @@ import { formatDate } from '@/utils/format-date';
 
 export function NewsHero({ article }: { article: NewsArticle }) {
   return (
-    <div className="bg-blue-100/40">
+    <div className="bg-blue-100/40 bg-[image:url('/images/news-top-blocks.png')] bg-left bg-no-repeat">
       <Container className="flex flex-col gap-4 py-6 sm:gap-6 sm:py-8 lg:py-15 lg:pb-9">
         <BackButton href="/news" ariaLabel="Back To News" />
 

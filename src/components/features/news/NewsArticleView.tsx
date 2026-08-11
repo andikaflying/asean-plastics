@@ -7,12 +7,25 @@ import { ErrorState } from '@/components/common/design-system/ErrorState';
 import { NewsHero } from './NewsHero';
 import { NewsArticleBody } from './NewsArticleBody';
 import { CircularProgress } from '@/components/common/design-system/CircularProgress';
+import { Typography } from '@/components/common/design-system/Typography';
 
 export function NewsArticleView({ slug }: { slug: string }) {
   const { data: article, isPending, isError, refetch } = useNewsArticle(slug);
 
   if (isPending) {
-    return <CircularProgress />;
+    return (
+      <Container>
+        <div
+          aria-busy="true"
+          className="flex min-h-[28.5rem] flex-col items-center justify-center gap-4"
+        >
+          <CircularProgress size="lg" label="Loading article" />
+          <Typography as="p" size="base" color="muted">
+            Loading article…
+          </Typography>
+        </div>
+      </Container>
+    );
   }
 
   if (isError) {

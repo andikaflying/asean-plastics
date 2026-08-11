@@ -5,14 +5,14 @@ export type NavItem = {
 
 export const PRIMARY_NAV_ITEMS: NavItem[] = [
   { label: 'Knowledge Hub', href: '/knowledge-hub' },
-  { label: 'Partnerships', href: '/partnerships' },
-  { label: 'Training', href: '/training' },
+  { label: 'Partnerships', href: '/#' },
+  { label: 'Training', href: '/#' },
 ];
 
 export const SECONDARY_NAV_ITEMS: NavItem[] = [
-  { label: 'Opportunities', href: '/opportunities' },
-  { label: 'News', href: '/news' },
-  { label: 'About', href: '/about' },
+  { label: 'Opportunities', href: '/#' },
+  { label: 'News', href: '/news/turning-the-tide-asean-marine-plastic-response' },
+  { label: 'About', href: '/#' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
