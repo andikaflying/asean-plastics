@@ -35,7 +35,7 @@ export function KnowledgeHubHero() {
           weight="bold"
           color="inherit"
           size="6xl"
-          className="text-2xl tracking-[-0.05rem] text-white uppercase sm:text-3xl sm:tracking-[-0.1rem] lg:text-6xl lg:tracking-[-0.1875rem]"
+          className="text-3xl tracking-[-0.05rem] text-white uppercase lg:text-6xl lg:tracking-[-0.1875rem]"
         >
           Knowledge Hub
         </Typography>

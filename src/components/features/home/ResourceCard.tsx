@@ -12,7 +12,6 @@ import { cn } from '@/utils/cn';
 
 type ResourceCardProps = {
   resource: KnowledgeResource;
-  isFeatured?: boolean;
   cardClassName?: string;
   containerClassName?: string;
   labelClassName?: string;
@@ -49,7 +48,6 @@ function ExternalLinkIcon() {
 
 export function ResourceCard({
   resource,
-  isFeatured = false,
   cardClassName,
   containerClassName,
   labelClassName,
@@ -63,20 +61,11 @@ export function ResourceCard({
   return (
     <Card
       className={cn(
-        'justify-between bg-transparent',
-        isFeatured
-          ? 'h-[25.625rem] max-h-[25.625rem] md:px-8 md:py-10'
-          : 'h-[23.125rem] max-h-[23.125rem] gap-8',
+        'h-[25.625rem] max-h-[25.625rem] justify-between gap-8 bg-transparent',
         cardClassName,
       )}
     >
-      <div
-        className={cn(
-          'flex flex-col gap-4',
-          isFeatured ? 'gap-[2.75rem]' : 'gap-[3.25rem]',
-          containerClassName,
-        )}
-      >
+      <div className={cn('flex flex-col gap-4 gap-[3.25rem]', containerClassName)}>
         <div
           className={cn(
             'flex flex-wrap items-center gap-3 text-base font-bold text-white uppercase',
@@ -92,7 +81,7 @@ export function ResourceCard({
         <div className="flex flex-col gap-4">
           <Typography
             as="h3"
-            size={isFeatured ? '3xl' : 'xl'}
+            size="xl"
             weight="semibold"
             className={cn('line-clamp-3 text-white', titleClassName)}
           >
@@ -109,9 +98,7 @@ export function ResourceCard({
 
           <div className="flex flex-wrap items-center gap-2">
             {visibleKeywords.map((keyword) => (
-              <Tag key={keyword} className={isFeatured ? 'text-base' : ''}>
-                {keyword}
-              </Tag>
+              <Tag key={keyword}>{keyword}</Tag>
             ))}
             {overflowCount > 0 && <Tag>{`${overflowCount}+`}</Tag>}
           </div>

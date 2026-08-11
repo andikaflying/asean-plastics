@@ -7,12 +7,38 @@ import {
   OFFERCARD_TEXT_CONTAINER_CLASSNAME,
 } from './OfferCard';
 import { OFFER_PILLARS } from '@/constants/homepage';
+import Image from 'next/image';
+
+function AccentMark() {
+  return (
+    <span
+      aria-hidden="true"
+      className="absolute top-[0px] left-[0.75rem] -z-10 -ml-6 inline-block h-7 w-6 shrink-0"
+    >
+      <Image
+        src="/icons/accent-square-1.svg"
+        alt=""
+        width={14}
+        height={14}
+        className="absolute top-[51%] right-[90%]"
+      />
+      <Image
+        src="/icons/accent-square-2.svg"
+        alt=""
+        width={15}
+        height={14}
+        className="absolute top-0 left-[0%]"
+      />
+    </span>
+  );
+}
 
 export function WhatWeOffer() {
   return (
     <div className="flex flex-col gap-[4.5rem] lg:flex-row lg:items-start">
       <div className="mt-2 flex flex-col gap-4 lg:w-[15.25rem] lg:shrink-0">
-        <Typography as="h2" size="display" className="tracking-[-0.0375rem]">
+        <Typography as="h2" size="display" className="relative tracking-[-0.0375rem]">
+          <AccentMark />
           What We Offer
         </Typography>
         <Typography as="p" size="md" weight="medium" color="muted">

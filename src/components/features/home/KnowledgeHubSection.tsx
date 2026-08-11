@@ -19,7 +19,9 @@ export function KnowledgeHubSection() {
           description="Explore the newest reports, policy toolkits, case studies, and data sets — each vetted and organized to help you advance plastics circularity across ASEAN."
           cta={{ label: 'Explore all resources', href: '/knowledge-hub' }}
           className="relative lg:flex-col"
-          titleClassName="ml-0 max-w-[18.125rem]"
+          titleClassName="max-w-[18.5rem]"
+          textContainerClassName="ml-1 lg:gap-6"
+          descriptionClassName="max-w-[37.5rem]"
         />
         <Carousel
           ariaLabel="Featured knowledge resources"
@@ -28,7 +30,7 @@ export function KnowledgeHubSection() {
           viewportClassName="mt-9"
         >
           {resources.map((resource) => (
-            <div key={resource.id} className="w-[19.5rem] sm:w-[24.5rem]">
+            <div key={resource.id} className="h-full max-h-[25.625rem] w-[19.5rem] sm:w-[24.5rem]">
               <ResourceCard resource={resource} />
             </div>
           ))}

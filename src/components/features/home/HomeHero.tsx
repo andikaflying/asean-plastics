@@ -30,7 +30,7 @@ export function HomeHero() {
 
   return (
     <div
-      className="mx-4rounded-3xl relative isolate sm:mx-6 lg:mx-[4.5rem]"
+      className="relative isolate rounded-3xl"
       role="region"
       aria-roledescription="carousel"
       aria-label="Homepage highlights"
@@ -54,7 +54,7 @@ export function HomeHero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
-              <div className="relative flex h-full min-h-[24rem] flex-col items-center justify-center gap-6 px-10 py-17 text-center sm:min-h-[32rem]">
+              <div className="relative flex h-full min-h-[24rem] flex-col items-center justify-center gap-4 px-10 py-17 text-center sm:min-h-[32rem]">
                 <Typography
                   as={index === 0 ? 'h1' : 'p'}
                   size="5xl"

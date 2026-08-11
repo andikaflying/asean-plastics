@@ -39,10 +39,7 @@ export default async function KnowledgeHubPage({ searchParams }: KnowledgeHubPag
     <>
       <KnowledgeHubHero />
       {showFeatured && (
-        <FeaturedResources
-          resources={data.featured}
-          className="-mt-10 pb-4 sm:-mt-16 lg:-mt-[20.5rem]"
-        />
+        <FeaturedResources resources={data.featured} className="-mt-16 pb-4 lg:-mt-[20.5rem]" />
       )}
       <ResourceToolbar />
       <Container className="py-8 lg:py-12">

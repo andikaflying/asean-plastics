@@ -24,7 +24,7 @@ export default function HomePage() {
           aria-hidden="true"
           className="absolute top-0 right-0 -z-10 h-[51rem] w-[64%] rounded-bl-[1rem] bg-blue-500"
         />
-        <div className="pt-24 pb-8 lg:pt-26 lg:pb-12">
+        <div className="mx-auto w-full max-w-[76.375rem] pt-24 pb-8 lg:pt-26 lg:pb-12">
           <HomeHero />
           <HomeIntro />
         </div>

@@ -27,7 +27,7 @@ function AccentMark({ tone }: { tone: 'light' | 'dark' }) {
     <span
       aria-hidden="true"
       className={cn(
-        'absolute top-[0px] left-[0.75rem] -z-10 inline-block h-7 w-6 shrink-0',
+        'absolute top-[0px] left-[-0.5rem] -z-10 inline-block h-7 w-6 shrink-0',
         tone === 'light' ? '-ml-6' : '-ml-6',
       )}
     >
@@ -43,7 +43,7 @@ function AccentMark({ tone }: { tone: 'light' | 'dark' }) {
         alt=""
         width={15}
         height={14}
-        className="absolute top-0 left-[81%]"
+        className="absolute top-0 left-[80%]"
       />
     </span>
   );
@@ -72,7 +72,7 @@ export function SectionHeading({
     >
       <div
         className={cn(
-          'ml-[4.5rem] flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-start lg:gap-8',
+          'flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-start lg:gap-8',
           textContainerClassName,
         )}
       >
@@ -81,7 +81,7 @@ export function SectionHeading({
           size="display"
           color="inherit"
           className={cn(
-            'tracking[-0.125rem] relative shrink-0',
+            'relative shrink-0 tracking-[-0.1875rem]',
             isLight ? 'text-white' : 'text-text-primary',
             titleClassName,
           )}
