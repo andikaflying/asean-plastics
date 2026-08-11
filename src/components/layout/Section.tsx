@@ -26,7 +26,11 @@ export function Section({
 }: SectionProps) {
   return (
     <section
-      className={cn('relative isolate overflow-hidden py-20', TONE_CLASSES[tone], className)}
+      className={cn(
+        'relative isolate overflow-hidden py-12 sm:py-16 lg:py-20',
+        TONE_CLASSES[tone],
+        className,
+      )}
       {...rest}
     >
       {isBleed ? children : <Container className={containerClassName}>{children}</Container>}

@@ -50,8 +50,12 @@ export function NewsSection() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex items-center justify-between">
-        <Typography as="h2" size="display" className="relative">
+      <div className="flex items-center justify-between gap-4">
+        <Typography
+          as="h2"
+          size="display"
+          className="lg:text-display relative text-2xl tracking-[-0.05rem] sm:text-3xl sm:tracking-[-0.1rem] lg:tracking-normal"
+        >
           <AccentMark />
           News
         </Typography>
@@ -60,7 +64,7 @@ export function NewsSection() {
         </Link>
       </div>
       <NewsFeatureCard article={featuredArticle} />
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:mt-16 lg:grid-cols-4">
         {gridArticles.map((article, index) => (
           <NewsCard key={article.slug} article={article} isHighlighted={index === 0} />
         ))}

@@ -22,12 +22,12 @@ export default function HomePage() {
       <div className="to-surface relative isolate overflow-hidden bg-gradient-to-b from-blue-100 via-blue-100/30">
         <div
           aria-hidden="true"
-          className="absolute top-0 right-0 -z-10 h-[51rem] w-[64%] rounded-bl-[1rem] bg-blue-500"
+          className="absolute top-0 right-0 -z-10 h-[26rem] w-[64%] rounded-bl-[1rem] bg-blue-500 sm:h-[32rem] lg:h-[51rem]"
         />
-        <div className="mx-auto w-full max-w-[76.375rem] pt-24 pb-8 lg:pt-26 lg:pb-12">
+        <Container className="pt-10 pb-6 sm:pt-14 lg:pt-26 lg:pb-12">
           <HomeHero />
           <HomeIntro />
-        </div>
+        </Container>
       </div>
       <Section tone="cream" className="lg:pb-10">
         <WhatWeOffer />
@@ -35,10 +35,10 @@ export default function HomePage() {
       <KnowledgeHubSection />
       <PartnershipsSection />
       <TrainingSection />
-      <Section tone="cream" className="py-24">
+      <Section tone="cream" className="py-12 sm:py-16 lg:py-24">
         <OpportunitiesSection />
       </Section>
-      <Container className="py-16 lg:py-24">
+      <Container className="py-10 sm:py-14 lg:py-24">
         <NewsSection />
       </Container>
     </>

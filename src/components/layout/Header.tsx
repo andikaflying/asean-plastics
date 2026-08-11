@@ -116,7 +116,10 @@ export function Header() {
               <IconButton
                 aria-label="Open menu"
                 variant="ghost"
-                className={cn('lg:hidden', isOnHero && 'bg-white')}
+                className={cn(
+                  'lg:hidden',
+                  isOnHero && 'cursor-pointer bg-transparent hover:bg-transparent',
+                )}
               >
                 <span className="flex flex-col gap-1.5" aria-hidden="true">
                   <span className="bg-text-primary block h-0.5 w-5" />

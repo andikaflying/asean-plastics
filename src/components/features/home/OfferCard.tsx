@@ -49,7 +49,7 @@ export function OfferCard({
   return (
     <div
       className={cn(
-        'border-grey-300 flex h-full flex-col gap-6 rounded-lg border px-8 py-10',
+        'border-grey-300 flex h-full flex-col gap-4 rounded-lg border px-5 py-6 sm:gap-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10',
         isHighlighted && 'bg-white',
         className,
       )}

@@ -31,13 +31,17 @@ function AccentMark() {
 
 export function OpportunitiesSection() {
   return (
-    <div className="mt-2 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
-      <div className="flex flex-col gap-4 lg:w-96 lg:shrink-0">
-        <Typography as="h2" size="display" className="relative tracking-[-0.125rem]">
+    <div className="mt-2 flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+      <div className="flex flex-col gap-3 sm:gap-4 lg:w-96 lg:shrink-0">
+        <Typography
+          as="h2"
+          size="display"
+          className="lg:text-display relative text-2xl tracking-[-0.05rem] sm:text-3xl sm:tracking-[-0.1rem] lg:tracking-[-0.125rem]"
+        >
           <AccentMark />
           Opportunities
         </Typography>
-        <Typography as="p" size="md" weight="medium">
+        <Typography as="p" size="md" weight="medium" className="lg:text-md text-sm sm:text-base">
           From conferences and grant calls to job openings and volunteer roles — find your next
           opportunity to contribute to the fight against marine plastic pollution in Southeast Asia.
         </Typography>
@@ -45,7 +49,7 @@ export function OpportunitiesSection() {
           See all
         </Link>
       </div>
-      <div className="flex flex-1 flex-col gap-14">
+      <div className="flex flex-1 flex-col gap-8 lg:gap-14">
         {OPPORTUNITIES.map((opportunity, index) => (
           <OpportunityCard
             key={opportunity.id}

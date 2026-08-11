@@ -1,3 +1,4 @@
+import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { SectionHeading } from '@/components/layout/SectionHeading';
 import { Carousel } from '@/components/common/design-system/Carousel';
@@ -12,7 +13,7 @@ export function KnowledgeHubSection() {
 
   return (
     <Section tone="blue" isBleed>
-      <div className="mx-auto flex w-full max-w-[76.375rem] flex-col gap-12">
+      <Container className="flex flex-col gap-8 lg:gap-12">
         <SectionHeading
           title="Knowledge Hub"
           tone="light"
@@ -35,7 +36,7 @@ export function KnowledgeHubSection() {
             </div>
           ))}
         </Carousel>
-      </div>
+      </Container>
     </Section>
   );
 }

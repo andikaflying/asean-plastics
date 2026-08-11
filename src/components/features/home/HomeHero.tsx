@@ -35,12 +35,12 @@ export function HomeHero() {
       aria-roledescription="carousel"
       aria-label="Homepage highlights"
     >
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="mt-10 overflow-hidden lg:mt-0" ref={emblaRef}>
         <div className="flex">
           {HERO_SLIDES.map((slide, index) => (
             <div
               key={slide.id}
-              className="relative h-[39.875rem] min-h-[24rem] w-full shrink-0 grow-0 basis-full sm:min-h-[32rem]"
+              className="relative h-[22rem] w-full shrink-0 grow-0 basis-full sm:h-[28rem] lg:h-[39.875rem]"
               role="group"
               aria-roledescription="slide"
               style={{ maskImage: 'url(/icons/hero-mask.svg)', maskSize: '100% 100%' }}
@@ -54,12 +54,12 @@ export function HomeHero() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
-              <div className="relative flex h-full min-h-[24rem] flex-col items-center justify-center gap-4 px-10 py-17 text-center sm:min-h-[32rem]">
+              <div className="relative flex h-full flex-col items-center justify-center gap-3 px-10 py-8 text-center sm:gap-4 sm:px-8 sm:py-12 lg:px-10 lg:py-17">
                 <Typography
                   as={index === 0 ? 'h1' : 'p'}
                   size="5xl"
                   color="inherit"
-                  className="leading-[5.375rem] text-white uppercase drop-shadow-[0_0_5px_rgba(0,0,0,0.65)]"
+                  className="text-3xl text-white uppercase drop-shadow-[0_0_5px_rgba(0,0,0,0.65)] lg:text-5xl lg:leading-[5.375rem]"
                 >
                   {slide.title}
                 </Typography>
@@ -68,7 +68,7 @@ export function HomeHero() {
                   size="xl"
                   weight="semibold"
                   color="inherit"
-                  className="max-w-2xl text-white drop-shadow-[0_0_5px_rgba(0,0,0,0.65)]"
+                  className="sm:text-md max-w-2xl text-base text-white drop-shadow-[0_0_5px_rgba(0,0,0,0.65)] lg:text-xl"
                 >
                   {slide.subtitle}
                 </Typography>
@@ -94,7 +94,7 @@ export function HomeHero() {
           <IconButton
             aria-label="Previous slide"
             variant="ghost"
-            className="border border-white text-white hover:bg-white/10"
+            className="border border-black text-black hover:bg-white/10 lg:border-white lg:text-white"
             onClick={() => emblaApi?.scrollPrev()}
           >
             <Image
@@ -102,13 +102,14 @@ export function HomeHero() {
               alt=""
               width={24}
               height={24}
+              className="brightness-0 lg:brightness-100"
               aria-hidden="true"
             />
           </IconButton>
           <IconButton
             aria-label="Next slide"
             variant="ghost"
-            className="border border-white text-white hover:bg-white/10"
+            className="border border-black text-black hover:bg-white/10 lg:border-white lg:text-white"
             onClick={() => emblaApi?.scrollNext()}
           >
             <Image
@@ -116,6 +117,7 @@ export function HomeHero() {
               alt=""
               width={24}
               height={24}
+              className="brightness-0 lg:brightness-100"
               aria-hidden="true"
             />
           </IconButton>

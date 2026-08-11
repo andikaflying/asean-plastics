@@ -35,17 +35,27 @@ function AccentMark() {
 
 export function WhatWeOffer() {
   return (
-    <div className="flex flex-col gap-[4.5rem] lg:flex-row lg:items-start">
-      <div className="mt-2 flex flex-col gap-4 lg:w-[15.25rem] lg:shrink-0">
-        <Typography as="h2" size="display" className="relative tracking-[-0.0375rem]">
+    <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-[4.5rem]">
+      <div className="mt-2 flex flex-col gap-3 sm:gap-4 lg:w-[15.25rem] lg:shrink-0">
+        <Typography
+          as="h2"
+          size="display"
+          className="lg:text-display relative text-2xl tracking-[-0.05rem] sm:text-3xl sm:tracking-[-0.1rem] lg:tracking-[-0.0375rem]"
+        >
           <AccentMark />
           What We Offer
         </Typography>
-        <Typography as="p" size="md" weight="medium" color="muted">
+        <Typography
+          as="p"
+          size="md"
+          weight="medium"
+          color="muted"
+          className="lg:text-md text-sm sm:text-base"
+        >
           Discover what the platform offers
         </Typography>
       </div>
-      <div className="mt-[0.375rem] grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-1 grid flex-1 grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-[0.375rem] lg:grid-cols-3">
         {OFFER_PILLARS.map((pillar) => {
           return (
             <OfferCard

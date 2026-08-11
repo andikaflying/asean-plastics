@@ -66,13 +66,13 @@ export function SectionHeading({
   return (
     <div
       className={cn(
-        'relative flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between',
+        'relative flex flex-col items-start gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-6',
         className,
       )}
     >
       <div
         className={cn(
-          'flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-start lg:gap-8',
+          'flex flex-col gap-3 sm:gap-4 lg:flex-1 lg:flex-row lg:items-start lg:gap-8 lg:gap-y-6',
           textContainerClassName,
         )}
       >
@@ -81,7 +81,7 @@ export function SectionHeading({
           size="display"
           color="inherit"
           className={cn(
-            'relative shrink-0 tracking-[-0.1875rem]',
+            'lg:text-display relative shrink-0 text-2xl tracking-[-0.05rem] sm:text-3xl sm:tracking-[-0.1rem] lg:tracking-[-0.1875rem]',
             isLight ? 'text-white' : 'text-text-primary',
             titleClassName,
           )}
@@ -96,7 +96,7 @@ export function SectionHeading({
             weight="medium"
             color="inherit"
             className={cn(
-              'max-w-xl pt-4',
+              'lg:text-md max-w-xl text-sm sm:text-base lg:pt-4',
               isLight ? 'text-white' : 'text-text-primary',
               descriptionClassName,
             )}
@@ -113,7 +113,7 @@ export function SectionHeading({
               ctaVariant,
               isLight ? 'border-white text-white hover:bg-white/10' : undefined,
             ),
-            'absolute right-0 bottom-[-6.25rem]',
+            'w-fit lg:absolute lg:right-0 lg:bottom-[-6.25rem]',
             ctaClassName,
           )}
         >
