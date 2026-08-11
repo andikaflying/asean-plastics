@@ -41,7 +41,7 @@ export default async function KnowledgeHubPage({ searchParams }: KnowledgeHubPag
       {showFeatured && (
         <FeaturedResources
           resources={data.featured}
-          className="-mt-[14rem] pb-4 lg:-mt-[20.5rem]"
+          className="-mt-10 pb-4 sm:-mt-16 lg:-mt-[20.5rem]"
         />
       )}
       <ResourceToolbar />

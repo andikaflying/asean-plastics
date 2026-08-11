@@ -63,9 +63,9 @@ export function ContactForm() {
     <form
       noValidate
       onSubmit={(event) => void handleSubmit(onSubmit)(event)}
-      className="border-grey-200 flex flex-col gap-6 rounded-xl border bg-white px-8 py-6"
+      className="border-grey-200 flex flex-col gap-5 rounded-xl border bg-white px-5 py-6 sm:gap-6 sm:px-8"
     >
-      <Typography as="h2" size="xl" weight="semibold">
+      <Typography as="h2" size="xl" weight="semibold" className="text-lg sm:text-xl">
         Send Us a Message
       </Typography>
 

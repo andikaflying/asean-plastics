@@ -6,14 +6,14 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
   switch (block.type) {
     case 'lede':
       return (
-        <Typography as="p" size="xl" weight="semibold" className="text-blue-500">
+        <Typography as="p" size="xl" weight="semibold" className="text-lg text-blue-500 sm:text-xl">
           {block.text}
         </Typography>
       );
 
     case 'heading':
       return (
-        <Typography as="h2" size="2xl">
+        <Typography as="h2" size="2xl" className="text-xl sm:text-2xl">
           {block.text}
         </Typography>
       );
@@ -50,7 +50,12 @@ function ArticleBlock({ block }: { block: NewsBodyBlock }) {
       return (
         <blockquote className="flex items-stretch gap-2.5 px-0 sm:px-18">
           <span aria-hidden="true" className="w-2 shrink-0 rounded-full bg-blue-100" />
-          <Typography as="p" size="xl" weight="semibold" className="flex-1 text-blue-500">
+          <Typography
+            as="p"
+            size="xl"
+            weight="semibold"
+            className="flex-1 text-lg text-blue-500 sm:text-xl"
+          >
             {block.text}
           </Typography>
         </blockquote>

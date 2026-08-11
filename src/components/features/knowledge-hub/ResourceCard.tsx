@@ -65,15 +65,15 @@ export function ResourceCard({
       className={cn(
         'justify-between bg-transparent',
         isFeatured
-          ? 'h-[25.625rem] max-h-[25.625rem] md:px-8 md:py-10'
-          : 'h-[23.125rem] max-h-[23.125rem] gap-8',
+          ? 'min-h-[20rem] md:h-[25.625rem] md:max-h-[25.625rem] md:px-8 md:py-10'
+          : 'min-h-[18rem] gap-6 md:h-[23.125rem] md:max-h-[23.125rem] md:gap-8',
         cardClassName,
       )}
     >
       <div
         className={cn(
           'flex flex-col gap-4',
-          isFeatured ? 'gap-[2.75rem]' : 'gap-[3.25rem]',
+          isFeatured ? 'gap-6 md:gap-[2.75rem]' : 'gap-6 md:gap-[3.25rem]',
           containerClassName,
         )}
       >
@@ -94,7 +94,11 @@ export function ResourceCard({
             as="h3"
             size={isFeatured ? '3xl' : 'xl'}
             weight="semibold"
-            className={cn('line-clamp-3 text-white', titleClassName)}
+            className={cn(
+              'line-clamp-3 text-white',
+              isFeatured ? 'text-xl md:text-3xl' : 'text-lg md:text-xl',
+              titleClassName,
+            )}
           >
             <Link
               href={resource.access.url}

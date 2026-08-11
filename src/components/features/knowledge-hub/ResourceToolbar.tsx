@@ -60,7 +60,8 @@ export function ResourceToolbar() {
           placeholder="Search by keyword..."
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
-          className="bg-transparent md:max-w-xl md:flex-1"
+          className="md:max-w-xl md:flex-1"
+          inputClassName="bg-transparent"
         />
         <Select
           startIcon={<SortIcon />}

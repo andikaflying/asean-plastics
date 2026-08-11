@@ -52,9 +52,9 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-6 border-t border-white/20">
-          <div className="flex flex-row gap-6 border-t border-white/20 pt-6 lg:justify-between">
+          <div className="flex flex-col gap-6 border-t border-white/20 pt-6 lg:flex-row lg:justify-between">
             <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              <div className="flex items-center gap-4 uppercase">
+              <div className="flex flex-wrap items-center gap-4 uppercase">
                 {PRIMARY_NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
@@ -66,7 +66,7 @@ export function Footer() {
                 ))}
               </div>
               <span aria-hidden="true" className="h-4 w-0.5 rounded-full bg-white/40" />
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 {SECONDARY_NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
@@ -109,8 +109,8 @@ export function Footer() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col items-start justify-between text-sm text-white/90 sm:flex-row sm:items-center">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col items-start justify-between gap-3 text-sm text-white/90 sm:flex-row sm:items-center sm:gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               {LEGAL_LINKS.map((link) => (
                 <Link
                   key={link.href}

@@ -4,7 +4,7 @@ import { Typography } from '@/components/common/design-system/Typography';
 
 export function KnowledgeHubHero() {
   return (
-    <div className="bg-dark relative isolate -z-10 h-[688px] overflow-hidden">
+    <div className="bg-dark relative isolate -z-10 h-[26rem] overflow-hidden sm:h-[32rem] lg:h-[688px]">
       <Image
         src="/images/knowledge-hub-hero.webp"
         alt=""
@@ -21,7 +21,7 @@ export function KnowledgeHubHero() {
         aria-hidden="true"
         className="pointer-events-none absolute top-0 right-0 hidden select-none lg:block"
       />
-      <Container className="relative flex min-h-[28.5rem] flex-col justify-center gap-4 py-16">
+      <Container className="relative flex min-h-[16rem] flex-col justify-center gap-3 py-10 sm:min-h-[20rem] sm:gap-4 sm:py-12 lg:min-h-[28.5rem] lg:py-16">
         <Image
           src="/icons/accent-1.svg"
           alt=""
@@ -35,7 +35,7 @@ export function KnowledgeHubHero() {
           weight="bold"
           color="inherit"
           size="6xl"
-          className="text-3xl tracking-[-0.1875rem] text-white uppercase sm:text-4xl lg:text-6xl"
+          className="text-2xl tracking-[-0.05rem] text-white uppercase sm:text-3xl sm:tracking-[-0.1rem] lg:text-6xl lg:tracking-[-0.1875rem]"
         >
           Knowledge Hub
         </Typography>
@@ -43,7 +43,7 @@ export function KnowledgeHubHero() {
           as="p"
           size="small-heading"
           color="inherit"
-          className="text-small-heading max-w-[830px] text-white/90"
+          className="sm:text-md lg:text-small-heading max-w-[830px] text-base text-white/90"
         >
           Discover research, policy tools, and practical guides tackling plastic pollution across
           Southeast Asia.

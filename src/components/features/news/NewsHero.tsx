@@ -9,11 +9,11 @@ import { formatDate } from '@/utils/format-date';
 export function NewsHero({ article }: { article: NewsArticle }) {
   return (
     <div className="bg-blue-100/40">
-      <Container className="flex flex-col gap-6 py-8 lg:py-15 lg:pb-9">
+      <Container className="flex flex-col gap-4 py-6 sm:gap-6 sm:py-8 lg:py-15 lg:pb-9">
         <BackButton href="/news" ariaLabel="Back To News" />
 
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="order-2 flex flex-col items-start gap-6 lg:order-1 lg:mt-[-1rem]">
+        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2">
+          <div className="order-2 flex flex-col items-start gap-4 sm:gap-6 lg:order-1 lg:mt-[-1rem]">
             <div className="flex items-center gap-3">
               <Typography
                 as="span"
@@ -36,7 +36,11 @@ export function NewsHero({ article }: { article: NewsArticle }) {
               </Typography>
             </div>
 
-            <Typography as="h1" size="4xl" className="line-clamp-3 leading-[72px] tracking-[-2px]">
+            <Typography
+              as="h1"
+              size="4xl"
+              className="line-clamp-3 text-2xl leading-tight tracking-[-0.03em] sm:text-3xl lg:text-4xl lg:leading-[72px] lg:tracking-[-2px]"
+            >
               {article.title}
             </Typography>
 
