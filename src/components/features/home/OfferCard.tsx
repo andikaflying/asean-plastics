@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 
 export const OFFERCARD_CONTAINER_CLASSNAME: Record<OfferPillarId, string> = {
   'knowledge-hub': 'px-[1.625rem]',
-  partnerships: '',
+  partnerships: "bg-[image:url('/images/box-blocks.png')] bg-bottom bg-no-repeat",
   training: '',
 };
 

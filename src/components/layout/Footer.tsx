@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from './Container';
-import { ALL_NAV_ITEMS, PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { PRIMARY_NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/constants/navigation';
 
 const SOCIAL_LINKS = [
   { label: 'Facebook', href: 'https://facebook.com', icon: '/icons/social-facebook.svg' },
@@ -17,7 +16,7 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-blue-500 text-white">
+    <footer className="bg-blue-500 bg-[image:url('/images/blue-container-blocks.png')] bg-repeat text-white">
       <Container className="flex flex-col gap-[3.25rem] py-12">
         <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="bg-grey-100 mb-[-0.5rem] flex h-[6.5625rem] w-[11.8125rem] items-center justify-center rounded-xl">

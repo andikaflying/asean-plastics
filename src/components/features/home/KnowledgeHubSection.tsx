@@ -12,7 +12,11 @@ export function KnowledgeHubSection() {
   const resources = (knowledgeResources as KnowledgeResource[]).slice(0, FEATURED_RESOURCE_COUNT);
 
   return (
-    <Section tone="blue" isBleed>
+    <Section
+      tone="blue"
+      isBleed
+      className="bg-[image:url('/images/blue-container-blocks.png')] bg-top-right bg-no-repeat"
+    >
       <Container className="flex flex-col gap-8 lg:gap-12">
         <SectionHeading
           title="Knowledge Hub"

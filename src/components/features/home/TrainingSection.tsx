@@ -7,7 +7,11 @@ import { TRAINING_COURSES } from '@/constants/trainings';
 
 export function TrainingSection() {
   return (
-    <Section tone="blue" isBleed>
+    <Section
+      tone="blue"
+      isBleed
+      className="bg-[image:url('/images/blue-container-blocks.png')] bg-top-right bg-no-repeat"
+    >
       <Container className="flex flex-col gap-8 lg:gap-12">
         <SectionHeading
           title="Training"
