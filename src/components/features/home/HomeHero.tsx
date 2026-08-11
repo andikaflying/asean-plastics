@@ -71,7 +71,7 @@ export function HomeHero() {
                   // Fade stacks every slide on top of each other, so without this a screen
                   // reader would announce all four headlines as one run-on block.
                   aria-hidden={!isActive}
-                  style={{ maskImage: 'url(/icons/hero-block-2.svg)', maskSize: '100% 100%' }}
+                  style={{ maskImage: 'url(/icons/hero-block-2.svg)', maskSize: 'cover' }}
                 >
                   <Image
                     src={slide.image.src}

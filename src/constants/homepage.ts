@@ -1,5 +1,4 @@
 import type { HeroSlide, OfferPillar } from '@/types/homepage';
-import type { PixelBlastRendererOptions } from '@/lib/pixel-blast-renderer';
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
