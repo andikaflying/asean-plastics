@@ -54,9 +54,9 @@ export function Footer() {
           <div className="flex flex-col gap-6 border-t border-white/20 pt-6 lg:flex-row lg:justify-between">
             <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-5 gap-y-3">
               <div className="flex flex-wrap items-center gap-4 uppercase">
-                {PRIMARY_NAV_ITEMS.map((item) => (
+                {PRIMARY_NAV_ITEMS.map((item, index) => (
                   <Link
-                    key={item.href}
+                    key={`${item.label}-${index}`}
                     href={item.href}
                     className="text-sm font-bold tracking-[0.035em] text-white/90 hover:text-white"
                   >
@@ -66,9 +66,9 @@ export function Footer() {
               </div>
               <span aria-hidden="true" className="h-4 w-0.5 rounded-full bg-white/40" />
               <div className="flex flex-wrap items-center gap-4">
-                {SECONDARY_NAV_ITEMS.map((item) => (
+                {SECONDARY_NAV_ITEMS.map((item, index) => (
                   <Link
-                    key={item.href}
+                    key={`${item.label}-${index}`}
                     href={item.href}
                     className="text-sm font-medium tracking-[0.035em] text-white/90 hover:text-white"
                   >

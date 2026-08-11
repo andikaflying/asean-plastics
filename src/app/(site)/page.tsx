@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { HomeHero } from '@/components/features/home/HomeHero';
+import { PixelBlastBackgroundLoader } from '@/components/common/PixelBlastBackgroundLoader';
 import { HomeIntro } from '@/components/features/home/HomeIntro';
 import { WhatWeOffer } from '@/components/features/home/WhatWeOffer';
 import { KnowledgeHubSection } from '@/components/features/home/KnowledgeHubSection';
@@ -20,6 +21,7 @@ export default function HomePage() {
   return (
     <>
       <div className="to-surface relative isolate overflow-hidden bg-[linear-gradient(var(--tw-gradient-stops))] [--tw-gradient-position:to_bottom_in_oklab] from-blue-100 via-blue-100/30 bg-top bg-no-repeat">
+        <PixelBlastBackgroundLoader className="absolute inset-0 -z-20" />
         <div
           aria-hidden="true"
           className="absolute top-0 right-0 -z-10 h-[26rem] w-[64%] rounded-bl-[1rem] bg-blue-500 sm:h-[32rem] lg:h-[51rem]"

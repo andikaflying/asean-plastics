@@ -85,9 +85,9 @@ export function Header() {
 
           <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
             <div className="mr-1 flex items-center gap-6 uppercase">
-              {PRIMARY_NAV_ITEMS.map((item) => (
+              {PRIMARY_NAV_ITEMS.map((item, index) => (
                 <NavLink
-                  key={item.href}
+                  key={`${item.label}-${index}`}
                   item={item}
                   isActive={pathname.startsWith(item.href)}
                   isOnHero={isOnHero}
@@ -100,9 +100,9 @@ export function Header() {
               className={cn('h-4 w-0.5 rounded-full', isOnHero ? 'bg-white/40' : 'bg-grey-500/50')}
             />
             <div className="flex items-center gap-6">
-              {SECONDARY_NAV_ITEMS.map((item) => (
+              {SECONDARY_NAV_ITEMS.map((item, index) => (
                 <NavLink
-                  key={item.href}
+                  key={`${item.label}-${index}`}
                   item={item}
                   isActive={pathname.startsWith(item.href)}
                   isOnHero={isOnHero}
@@ -150,9 +150,9 @@ export function Header() {
                   </Dialog.Close>
                 </div>
                 <nav aria-label="Primary" className="flex flex-col gap-4">
-                  {ALL_NAV_ITEMS.map((item) => (
+                  {ALL_NAV_ITEMS.map((item, index) => (
                     <Link
-                      key={item.href}
+                      key={`${item.label}-${index}`}
                       href={item.href}
                       onClick={() => setIsMobileNavOpen(false)}
                       aria-current={pathname.startsWith(item.href) ? 'page' : undefined}
