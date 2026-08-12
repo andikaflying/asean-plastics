@@ -69,7 +69,14 @@ export function filterKnowledgeResources(
   const totalPages = Math.max(1, Math.ceil(total / RESOURCES_PER_PAGE));
   const page = Math.min(query.page, totalPages);
   const start = (page - 1) * RESOURCES_PER_PAGE;
-  const data = sorted.slice(start, start + RESOURCES_PER_PAGE);
+  const paginatedResources = sorted.slice(start, start + RESOURCES_PER_PAGE);
 
-  return { data, total, page, perPage: RESOURCES_PER_PAGE, totalPages, featured };
+  return {
+    data: paginatedResources,
+    total,
+    page,
+    perPage: RESOURCES_PER_PAGE,
+    totalPages,
+    featured,
+  };
 }

@@ -21,7 +21,7 @@ export type PixelBlastRendererOptions = {
   patternDensity: number;
   edgeFade: number;
   speed: number;
-  enableRipples: boolean;
+  hasRipples: boolean;
   pixelJitter?: number;
   rippleSpeed?: number;
   rippleThickness?: number;
@@ -316,7 +316,7 @@ export function createPixelBlastRenderer(
   gl.uniform1f(uniformLocations.uDensity, options.patternDensity);
   gl.uniform1f(uniformLocations.uPixelJitter, options.pixelJitter ?? 0);
   gl.uniform1i(uniformLocations.uShapeType, SHAPE_TYPE_BY_VARIANT[options.variant]);
-  gl.uniform1i(uniformLocations.uEnableRipples, options.enableRipples ? 1 : 0);
+  gl.uniform1i(uniformLocations.uEnableRipples, options.hasRipples ? 1 : 0);
   gl.uniform1f(uniformLocations.uRippleSpeed, options.rippleSpeed ?? 0.3);
   gl.uniform1f(uniformLocations.uRippleThickness, options.rippleThickness ?? 0.1);
   gl.uniform1f(uniformLocations.uRippleIntensity, options.rippleIntensity ?? 1);

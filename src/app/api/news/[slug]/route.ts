@@ -8,7 +8,7 @@ export async function GET(request: NextRequest, ctx: RouteContext<'/api/news/[sl
   if (mockResponse) return mockResponse;
 
   const { slug } = await ctx.params;
-  const article = (newsFixture as NewsArticle[]).find((item) => item.slug === slug);
+  const article = (newsFixture as NewsArticle[]).find((newsArticle) => newsArticle.slug === slug);
 
   if (!article) {
     return NextResponse.json({ message: 'Article not found' }, { status: 404 });

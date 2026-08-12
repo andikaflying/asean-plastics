@@ -40,7 +40,7 @@ export function ContactForm() {
   const resultRef = useRef<HTMLDivElement>(null);
   const messageValue = useWatch({ control, name: 'message' });
 
-  async function onSubmit(values: ContactFormValues) {
+  async function handleContactSubmit(values: ContactFormValues) {
     submitContact.reset();
 
     try {
@@ -62,7 +62,7 @@ export function ContactForm() {
   return (
     <form
       noValidate
-      onSubmit={(event) => void handleSubmit(onSubmit)(event)}
+      onSubmit={(event) => void handleSubmit(handleContactSubmit)(event)}
       className="border-grey-200 flex flex-col gap-5 rounded-xl border bg-white px-5 py-6 sm:gap-6 sm:px-8"
     >
       <Typography as="h2" size="xl" weight="semibold" className="text-lg sm:text-xl">

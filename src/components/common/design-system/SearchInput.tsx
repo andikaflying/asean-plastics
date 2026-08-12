@@ -4,13 +4,13 @@ import { cn } from '@/utils/cn';
 
 type SearchInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  hideLabel?: boolean;
+  isLabelHidden?: boolean;
   className?: string;
   inputClassName?: string;
 };
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(function SearchInput(
-  { label, hideLabel = true, className, inputClassName, id, ...rest },
+  { label, isLabelHidden = true, className, inputClassName, id, ...rest },
   ref,
 ) {
   const generatedId = useId();
@@ -20,7 +20,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(functi
     <div className={cn('flex flex-col gap-2', className)}>
       <LabelPrimitive.Root
         htmlFor={inputId}
-        className={cn('text-text-primary text-sm font-semibold', hideLabel && 'sr-only')}
+        className={cn('text-text-primary text-sm font-semibold', isLabelHidden && 'sr-only')}
       >
         {label}
       </LabelPrimitive.Root>

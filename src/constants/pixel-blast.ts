@@ -9,5 +9,5 @@ export const PIXEL_BLAST_SETTINGS: PixelBlastRendererOptions = {
   patternDensity: 1,
   edgeFade: 0.55,
   speed: 0.4,
-  enableRipples: true,
+  hasRipples: true,
 };

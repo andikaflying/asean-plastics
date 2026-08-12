@@ -27,12 +27,12 @@ function SortIcon() {
 export function ResourceToolbar() {
   const { query, updateQuery } = useKnowledgeHubUrl();
   const [searchValue, setSearchValue] = useState(query.q);
-  const [committedQ, setCommittedQ] = useState(query.q);
+  const [committedSearchQuery, setCommittedSearchQuery] = useState(query.q);
 
   // Adjusting state during render (not in an effect) when the URL's `q`
   // changes from outside this component — e.g. a chip removal or RESET.
-  if (query.q !== committedQ) {
-    setCommittedQ(query.q);
+  if (query.q !== committedSearchQuery) {
+    setCommittedSearchQuery(query.q);
     setSearchValue(query.q);
   }
 

@@ -27,7 +27,7 @@ type FacetKey = 'type' | 'theme' | 'geo' | 'format' | 'lang';
 
 type FilterDraft = Pick<ResourceListQuery, FacetKey | 'yearFrom' | 'yearTo'>;
 
-function draftFromQuery(query: ResourceListQuery): FilterDraft {
+function buildDraftFromQuery(query: ResourceListQuery): FilterDraft {
   return {
     type: query.type,
     theme: query.theme,
@@ -39,10 +39,10 @@ function draftFromQuery(query: ResourceListQuery): FilterDraft {
   };
 }
 
-function isSameFacetSet(a: string[], b: string[]): boolean {
-  if (a.length !== b.length) return false;
-  const sortedB = [...b].sort();
-  return [...a].sort().every((value, index) => value === sortedB[index]);
+function isSameFacetSet(selectedValues: string[], otherValues: string[]): boolean {
+  if (selectedValues.length !== otherValues.length) return false;
+  const sortedOtherValues = [...otherValues].sort();
+  return [...selectedValues].sort().every((value, index) => value === sortedOtherValues[index]);
 }
 
 function isDraftEqualToQuery(draft: FilterDraft, query: ResourceListQuery): boolean {
@@ -91,7 +91,7 @@ function CheckboxGroup({
 
 export function ResourceFilterPanel() {
   const { query, updateQuery } = useKnowledgeHubUrl();
-  const [draft, setDraft] = useState<FilterDraft>(() => draftFromQuery(query));
+  const [draft, setDraft] = useState<FilterDraft>(() => buildDraftFromQuery(query));
   const [committedQuery, setCommittedQuery] = useState(query);
   // Groups with an active selection start expanded (matches the filtered
   // Figma frame); with nothing selected every group starts collapsed
@@ -105,7 +105,7 @@ export function ResourceFilterPanel() {
   // back/forward button.
   if (query !== committedQuery) {
     setCommittedQuery(query);
-    setDraft(draftFromQuery(query));
+    setDraft(buildDraftFromQuery(query));
   }
 
   const hasDraftChanges = !isDraftEqualToQuery(draft, query);

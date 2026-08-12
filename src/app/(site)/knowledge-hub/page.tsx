@@ -30,16 +30,19 @@ export default async function KnowledgeHubPage({ searchParams }: KnowledgeHubPag
   const query = parseKnowledgeHubSearchParams(toURLSearchParams(await searchParams));
 
   const queryClient = getQueryClient();
-  const data = await fetchKnowledgeResources(query);
-  queryClient.setQueryData(KNOWLEDGE_RESOURCE_KEYS.list(query), data);
+  const resourceList = await fetchKnowledgeResources(query);
+  queryClient.setQueryData(KNOWLEDGE_RESOURCE_KEYS.list(query), resourceList);
 
-  const showFeatured = query.page === 1 && !hasActiveKnowledgeHubFilters(query);
+  const shouldShowFeatured = query.page === 1 && !hasActiveKnowledgeHubFilters(query);
 
   return (
     <>
       <KnowledgeHubHero />
-      {showFeatured && (
-        <FeaturedResources resources={data.featured} className="-mt-16 pb-4 lg:-mt-[20.5rem]" />
+      {shouldShowFeatured && (
+        <FeaturedResources
+          resources={resourceList.featured}
+          className="-mt-16 pb-4 lg:-mt-[20.5rem]"
+        />
       )}
       <ResourceToolbar />
       <Container className="py-8 lg:py-12">
