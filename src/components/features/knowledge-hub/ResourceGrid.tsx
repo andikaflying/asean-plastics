@@ -1,14 +1,30 @@
 'use client';
 
-import { CircularProgress } from '@/components/common/design-system/CircularProgress';
 import { ErrorState } from '@/components/common/design-system/ErrorState';
 import { EmptyState } from '@/components/common/design-system/EmptyState';
 import { Pagination } from '@/components/common/design-system/Pagination';
-import { Typography } from '@/components/common/design-system/Typography';
 import { ResourceCard } from './ResourceCard';
+import { ResourceCardSkeleton } from './ResourceCardSkeleton';
 import { useKnowledgeResources } from '@/hooks/useKnowledgeResources';
 import { useKnowledgeHubUrl } from '@/hooks/useKnowledgeHubUrl';
 import { hasActiveKnowledgeHubFilters } from '@/lib/knowledge-hub-params';
+import { RESOURCES_PER_PAGE } from '@/constants/knowledge-hub';
+
+function ResourceGridSkeleton({ count }: { count: number }) {
+  return (
+    <div
+      role="status"
+      aria-busy="true"
+      aria-live="polite"
+      aria-label="Loading resources"
+      className="grid gap-6 md:grid-cols-2"
+    >
+      {Array.from({ length: count }, (_, index) => (
+        <ResourceCardSkeleton key={index} />
+      ))}
+    </div>
+  );
+}
 
 export function ResourceGrid() {
   const { query, buildHref, updateQuery } = useKnowledgeHubUrl();
@@ -16,11 +32,8 @@ export function ResourceGrid() {
 
   if (isPending) {
     return (
-      <div aria-busy="true" className="flex flex-col items-center gap-4 py-24">
-        <CircularProgress size="lg" label="Loading resources" />
-        <Typography as="p" size="base" color="muted">
-          Loading resources…
-        </Typography>
+      <div className="flex flex-col gap-6">
+        <ResourceGridSkeleton count={RESOURCES_PER_PAGE} />
       </div>
     );
   }
@@ -31,15 +44,9 @@ export function ResourceGrid() {
 
   return (
     <div className="flex flex-col gap-6">
-      {isFetching && (
-        <div className="flex items-center justify-between">
-          <Typography as="p" size="base" color="muted" aria-live="polite">
-            Updating results…
-          </Typography>
-        </div>
-      )}
-
-      {data.data.length === 0 ? (
+      {isFetching ? (
+        <ResourceGridSkeleton count={data.data.length || RESOURCES_PER_PAGE} />
+      ) : data.data.length === 0 ? (
         <EmptyState
           title="No results found"
           message="Try adjusting your search or filters to find what you're looking for."
@@ -60,7 +67,7 @@ export function ResourceGrid() {
           }
         />
       ) : (
-        <div className="grid gap-6 md:grid-cols-2" aria-busy={isFetching}>
+        <div className="grid gap-6 md:grid-cols-2">
           {data.data.map((resource) => (
             <ResourceCard
               key={resource.id}

@@ -8,7 +8,7 @@ import { SORT_OPTIONS } from '@/constants/knowledge-hub';
 import { useKnowledgeHubUrl } from '@/hooks/useKnowledgeHubUrl';
 import type { ResourceSortOrder } from '@/types/knowledge-resource';
 
-const SEARCH_DEBOUNCE_MS = 2000;
+const SEARCH_DEBOUNCE_MS = 1000;
 
 function SortIcon() {
   return (
@@ -37,7 +37,9 @@ export function ResourceToolbar() {
   }
 
   useEffect(() => {
-    if (searchValue === query.q) return undefined;
+    if (searchValue === query.q) {
+      return undefined;
+    }
 
     const timeout = setTimeout(() => {
       updateQuery({ q: searchValue, page: 1 });
@@ -46,7 +48,7 @@ export function ResourceToolbar() {
     return () => clearTimeout(timeout);
     // Only the debounce timer should reset when the typed value changes.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchValue]);
+  }, [searchValue, query.q]);
 
   function handleSortChange(value: string) {
     updateQuery({ sort: value as ResourceSortOrder, page: 1 });
