@@ -2,8 +2,8 @@ import { PixelBlastRendererOptions } from '@/lib/pixel-blast-renderer';
 
 /** Tuning for the homepage hero's animated backdrop (see `PixelBlastBackground`). */
 export const PIXEL_BLAST_SETTINGS: PixelBlastRendererOptions = {
-  variant: 'square', // echoes the site's block motif (hero-blocks.svg, box-blocks.png)
-  color: '#85a0d0', // blue-300 from theme.css — tuned against the PNG it replaces
+  variant: 'square',
+  color: '#dbe6f9',
   pixelSize: 50,
   patternScale: 2,
   patternDensity: 1,

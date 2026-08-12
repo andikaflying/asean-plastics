@@ -34,6 +34,7 @@
   --breakpoint-xl: 80rem; /* 1280px */
 
   /* Blue ramp — anchored at 100 (Light Blue) and 500 (Blue) from Figma variables */
+  --color-blue-50: #e7f1f9; /* Figma homepage "BG" wash (node 1:1913), lighter than blue-100 */
   --color-blue-100: #dbe6f9;
   --color-blue-200: #b0c3e5;
   --color-blue-300: #85a0d0;

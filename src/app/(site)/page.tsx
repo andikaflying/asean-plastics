@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <div className="to-surface relative isolate overflow-hidden bg-[linear-gradient(var(--tw-gradient-stops))] [--tw-gradient-position:to_bottom_in_oklab] from-blue-100 via-blue-100/30 bg-top bg-no-repeat">
+      <div className="relative isolate overflow-hidden bg-linear-to-b from-blue-50 from-80% to-white to-98%">
         <PixelBlastBackgroundLoader className="absolute inset-0 -z-20" />
         <div
           aria-hidden="true"
